@@ -227,7 +227,11 @@ function home() {
 function select(id, label, items, val) {
   return `<select id="${id}" aria-label="${label}">
     <option value="">${label}</option>
-    ${items.map(x => `<option ${x === val ? 'selected' : ''} value="${esc(x)}">${esc(x)}</option>`).join('')}
+    ${items.map(x => {
+      const v = typeof x === 'object' ? x.value : x;
+      const t = typeof x === 'object' ? x.text : x;
+      return `<option ${v === val ? 'selected' : ''} value="${esc(v)}">${esc(t)}</option>`;
+    }).join('')}
   </select>`;
 }
 
@@ -243,7 +247,17 @@ function library() {
     ? [...new Set(data.records.map(r => r.group))].sort((a, b) => a.localeCompare(b, 'pt-BR'))
     : groups(isMed ? 'posologia' : 'clinica');
 
-  const speciesOptions = ['cães', 'gatos', 'cães e gatos'];
+  const speciesOptions = [
+    { value: 'cães', text: 'Cães (caninos)' },
+    { value: 'gatos', text: 'Gatos (felinos)' }
+  ];
+
+  const sectionOptions = [
+    { value: 'PRESCRIÇÃO HOSPITALAR', text: 'Prescrição Hospitalar' },
+    { value: 'PRESCRIÇÃO DOMICILIAR', text: 'Prescrição Domiciliar' },
+    { value: 'Solicitações:', text: 'Solicitações de Exames' },
+    { value: 'Recomendações:', text: 'Recomendações e Orientações' }
+  ];
 
   return head('CONSULTA ORGANIZADA', titles[view], subtitle) +
   searchBox(isMed ? 'Pesquise por medicamento, princípio ativo ou indicação…' : 'Pesquise por diagnóstico, sinal clínico ou palavra-chave…') +
@@ -252,7 +266,7 @@ function library() {
     ${select('species', 'Todas as espécies', speciesOptions, species)}
     ${isMed
       ? select('route', 'Todas as vias', [...new Set(data.records.filter(r => r.doc === 'posologia').map(r => r.route))].filter(Boolean).sort(), route)
-      : select('section', 'Todos os conteúdos', ['PRESCRIÇÃO HOSPITALAR', 'PRESCRIÇÃO DOMICILIAR', 'Solicitações:', 'Recomendações:'], section)
+      : select('section', 'Todos os tipos de prescrição', sectionOptions, section)
     }
     <button type="button" class="btn secondary" id="clear">Limpar filtros</button>
   </div>
