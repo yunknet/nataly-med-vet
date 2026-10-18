@@ -1,0 +1,781 @@
+clinica | 13-14 | Alergologia | Alergia respiratória
+clinica | 14-15 | Alergologia | Anafilaxia (reação alérgica)
+clinica | 16-17 | Cardiologia | Cardiomiopatia arritmogênica do ventrículo direito
+clinica | 17-18 | Cardiologia | Cardiomiopatia dilatada canina
+clinica | 18-20 | Cardiologia | Cardiomiopatia dilatada felina
+clinica | 20-21 | Cardiologia | Cardiomiopatia hipertrófica felina
+clinica | 21-22 | Cardiologia | Endocardiose valvar canina
+clinica | 23-23 | Cardiologia | Efusão pericárdica
+clinica | 23-24 | Cardiologia | Hipertensão arterial
+clinica | 25-27 | Dermatologia | Abscesso cutâneo
+clinica | 27-28 | Dermatologia | Acne canina
+clinica | 28-29 | Dermatologia | Acne felina
+clinica | 29-30 | Dermatologia | Adenite sebácea
+clinica | 30-32 | Dermatologia | Alopecia psicogênica ou por lambedura
+clinica | 32-33 | Dermatologia | Alopecia simétrica felina
+clinica | 33-35 | Dermatologia | Alopecia x
+clinica | 35-36 | Dermatologia | Blefarite
+clinica | 36-37 | Dermatologia | Ceratose de ponto de apoio (calo de apoio)
+clinica | 37-39 | Dermatologia | Complexo granuloma eosinofílico felino (cgef)
+clinica | 39-41 | Dermatologia | Complexo pênfigo
+clinica | 41-43 | Dermatologia | Dermatite acral por lambedura
+clinica | 43-45 | Dermatologia | Dermatite actínica
+clinica | 45-47 | Dermatologia | Dermatite alérgica à picada de pulgas (dape/dapp)
+clinica | 47-48 | Dermatologia | Dermatite alérgica de contato
+clinica | 49-51 | Dermatologia | Dermatite atópica canina
+clinica | 51-52 | Dermatologia | Dermatite atópica felina
+clinica | 52-53 | Dermatologia | Dermatite de bolsa escrotal
+clinica | 53-55 | Dermatologia | Dermatite de contato
+clinica | 55-56 | Dermatologia | Dermatite de hipersensibilidade alimentar
+clinica | 57-58 | Dermatologia | Dermatite por malassezia (malasseziose)
+clinica | 58-60 | Dermatologia | Dermatite úmida aguda (dermatite piotraumática)
+clinica | 60-62 | Dermatologia | Dermatomiosite canina
+clinica | 62-64 | Dermatologia | Dermatose esfoliativa
+clinica | 64-66 | Dermatologia | Lúpus eritematoso cutâneo
+clinica | 66-66 | Dermatologia | Otite externa eritematoceruminosa canina
+clinica | 67-67 | Dermatologia | Otite externa eritematosa canina
+clinica | 68-68 | Dermatologia | Otite externa hiperplásica ou estenosante canina
+clinica | 69-70 | Dermatologia | Otite externa supurativa ou exsudativa ou bacteriana canina
+clinica | 70-72 | Dermatologia | Otohematoma (hematoma aural)
+clinica | 73-75 | Endocrinologia e metabologia | Cetoacidose diabética
+clinica | 75-76 | Endocrinologia e metabologia | Diabetes mellitus
+clinica | 76-77 | Endocrinologia e metabologia | Hipertireoidismo felino
+clinica | 77-78 | Endocrinologia e metabologia | Hipotireoidismo canino
+clinica | 79-81 | Gastroenterologia | Colite bacteriana
+clinica | 81-82 | Gastroenterologia | Constipação
+clinica | 83-84 | Gastroenterologia | Coprofagia
+clinica | 84-85 | Gastroenterologia | Diarreia
+clinica | 85-87 | Gastroenterologia | Enteropatia inflamatória crônica ou doença inflamatória intestinal
+clinica | 87-89 | Gastroenterologia | Fístula perianal
+clinica | 89-91 | Gastroenterologia | Gastrite
+clinica | 91-93 | Gastroenterologia | Gastroenterite hemorrágica
+clinica | 93-95 | Gastroenterologia | Gastroenterite viral
+clinica | 95-97 | Gastroenterologia | Giardíase
+clinica | 97-98 | Gastroenterologia | Megaesôfago
+clinica | 98-100 | Gastroenterologia | Melena
+clinica | 100-101 | Gastroenterologia | Vômito (êmese)
+clinica | 102-103 | Ginecologia e obstetrícia | Eclâmpsia (hipocalcemia pós-parto)
+clinica | 103-104 | Ginecologia e obstetrícia | Mastite
+clinica | 104-106 | Ginecologia e obstetrícia | Piometra
+clinica | 106-107 | Ginecologia e obstetrícia | Pseudociese (gravidez psicológica)
+clinica | 107-107 | Ginecologia e obstetrícia | Vaginite
+clinica | 108-109 | Hematologia | Anemia hemolítica
+clinica | 109-110 | Hematologia | Anemia hemolítica imunomediada (ahim)
+clinica | 110-111 | Hematologia | Lúpus eritematoso sistêmico
+clinica | 112-113 | Hematologia | Neutropenia
+clinica | 113-114 | Hematologia | Petéquia e equimose
+clinica | 114-116 | Hematologia | Trombocitopenia
+clinica | 117-119 | Hepatologia e pancreatopatias | Cirrose/fibrose hepática
+clinica | 120-122 | Hepatologia e pancreatopatias | Colangite felina, colangio-hepatite felina
+clinica | 122-124 | Hepatologia e pancreatopatias | Colecistite
+clinica | 124-125 | Hepatologia e pancreatopatias | Colelitíase
+clinica | 125-127 | Hepatologia e pancreatopatias | Encefalopatia hepática
+clinica | 127-128 | Hepatologia e pancreatopatias | Esteatose hepática
+clinica | 128-129 | Hepatologia e pancreatopatias | Hepatite aguda
+clinica | 130-131 | Hepatologia e pancreatopatias | Lipidose hepática felina
+clinica | 131-134 | Hepatologia e pancreatopatias | Pancreatite
+clinica | 135-136 | Infectologia | Actinomicose
+clinica | 136-137 | Infectologia | Ancilostomíase
+clinica | 137-139 | Infectologia | Babesiose
+clinica | 139-140 | Infectologia | Bartonelose felina (doença da arranhadura do gato)
+clinica | 140-141 | Infectologia | Bartonelose canina (doença da arranhadura do gato)
+clinica | 141-142 | Infectologia | Blastomicose
+clinica | 142-145 | Infectologia | Cinomose
+clinica | 145-147 | Infectologia | Criptococose
+clinica | 147-149 | Infectologia | Demodicose, sarna demodécica (demodex sp.)
+clinica | 149-150 | Infectologia | Dermatofitose
+clinica | 150-152 | Infectologia | Dirofilariose
+clinica | 152-154 | Infectologia | Erliquiose
+clinica | 154-156 | Infectologia | Escabiose (sarna sarcóptica)
+clinica | 156-157 | Infectologia | Esporotricose
+clinica | 158-159 | Infectologia | Hepatozoonose
+clinica | 159-161 | Infectologia | Histoplasmose
+clinica | 161-162 | Infectologia | Leishmaniose
+clinica | 162-164 | Infectologia | Leptospirose
+clinica | 164-165 | Infectologia | Micoplasmose felina
+clinica | 165-167 | Infectologia | Miíase (berne)
+clinica | 167-168 | Infectologia | Otocaríase (sarna otodécica)
+clinica | 168-170 | Infectologia | Panleucopenia felina (parvovírus felino - fpv)
+clinica | 170-173 | Infectologia | Parvovirose/coronavirose canina
+clinica | 173-174 | Infectologia | Peritonite infecciosa felina (pif)
+clinica | 174-175 | Infectologia | Platinosomose
+clinica | 175-177 | Infectologia | Toxoplasmose
+clinica | 177-178 | Infectologia | Traqueobronquite infecciosa canina (tosse dos canis)
+clinica | 179-180 | Infectologia | Vírus da imunodeficiência felina (fiv)
+clinica | 180-182 | Infectologia | Vírus da leucemia felina (felv)
+clinica | 182-184 | Nefrologia | Cistite bacteriana
+clinica | 184-186 | Nefrologia | Cistite idiopática felina
+clinica | 186-187 | Nefrologia | Doença do trato urinário inferior dos felinos (dtuif)
+clinica | 187-191 | Nefrologia | Doença renal crônica (drc)
+clinica | 191-194 | Nefrologia | Injúria renal aguda
+clinica | 194-196 | Nefrologia | Uretrolitíase felina (obstrução uretral)
+clinica | 196-197 | Nefrologia | Prolapso uretral
+clinica | 197-198 | Nefrologia | Síndrome nefrótica
+clinica | 199-200 | Nefrologia | Urolitíase canina (cálculo vesical)
+clinica | 200-202 | Nefrologia | Urolitíase felina (cálculo vesical)
+clinica | 203-205 | Neurologia | Acidente vascular cerebral ou encefálico (avc-ave)
+clinica | 205-207 | Neurologia | Disfunção cognitiva canina (alzheimer canino)
+clinica | 207-209 | Neurologia | Epilepsia
+clinica | 209-210 | Neurologia | Síndrome do tremor responsiva à corticoesteroides
+clinica | 211-212 | Odontologia | Abscesso da raiz dentária
+clinica | 212-214 | Odontologia | Complexo gengivite-estomatite felina (cgef)
+clinica | 214-215 | Odontologia | Doença periodontal
+clinica | 215-217 | Odontologia | Fratura dentária
+clinica | 217-218 | Odontologia | Sialocele
+clinica | 219-220 | Oftalmologia | Catarata
+clinica | 220-221 | Oftalmologia | Ceratite eosinofílica felina
+clinica | 221-222 | Oftalmologia | Ceratite superficial crônica
+clinica | 222-223 | Oftalmologia | Ceratoconjuntivite seca canina
+clinica | 223-224 | Oftalmologia | Conjuntivite
+clinica | 224-225 | Oftalmologia | Conjuntivite folicular
+clinica | 226-226 | Oftalmologia | Ectrópio
+clinica | 226-227 | Oftalmologia | Entrópio
+clinica | 227-228 | Oftalmologia | Episclerite
+clinica | 228-229 | Oftalmologia | Esclerose lenticular
+clinica | 229-230 | Oftalmologia | Glaucoma
+clinica | 230-231 | Oftalmologia | Hifema
+clinica | 231-232 | Oftalmologia | Protrusão da glândula da terceira pálpebra
+clinica | 233-234 | Oftalmologia | Úlcera de córnea superficial
+clinica | 234-235 | Oftalmologia | Uveíte
+clinica | 236-237 | Ortopedia | Artrite bacteriana ou séptica
+clinica | 237-240 | Ortopedia | Discoespondilite
+clinica | 240-241 | Ortopedia | Displasia coxofemoral canina
+clinica | 241-243 | Ortopedia | Doença articular degenerativa canina (dad)
+clinica | 243-245 | Ortopedia | Doença e/ou ruptura do ligamento cruzado cranial
+clinica | 245-246 | Ortopedia | Espondilose deformante
+clinica | 246-248 | Ortopedia | Luxação patelar canina
+clinica | 248-249 | Ortopedia | Poliartrite felina
+clinica | 250-251 | Pneumologia | Asma felina
+clinica | 251-252 | Pneumologia | Bronquite aguda
+clinica | 252-253 | Pneumologia | Bronquite crônica canina
+clinica | 254-256 | Pneumologia | Colapso de traqueia
+clinica | 256-257 | Pneumologia | Complexo respiratório felino
+clinica | 257-259 | Pneumologia | Edema pulmonar não cardiogênico
+clinica | 259-260 | Pneumologia | Efusão pleural
+clinica | 260-261 | Pneumologia | Espirro reverso (respiração paroxística inspiratória)
+clinica | 261-262 | Pneumologia | Pneumonia aspirativa
+clinica | 262-264 | Pneumologia | Pneumonia bacteriana
+clinica | 264-265 | Pneumologia | Respiração ofegante e taquipneia
+clinica | 265-266 | Pneumologia | Rinite
+clinica | 267-268 | Pneumologia | Síndrome braquicefálica das vias aéreas
+clinica | 269-270 | Toxicologia | Intoxicação por chumbinho (organofosforado e carbamato)
+clinica | 270-271 | Toxicologia | Intoxicação por paracetamol em felinos (acetaminofeno/tylenol)
+clinica | 272-273 | Toxicologia | Intoxicação por rodenticidas (cumarínicos e/ou idantiônicos)
+clinica | 273-274 | Toxicologia | Intoxicação por veneno de sapo (bufotoxina)
+clinica | 274-276 | Toxicologia | Picada de abelha, vespa e/ou maribondo
+clinica | 276-277 | Toxicologia | Picada de aranha-marrom
+clinica | 278-279 | Toxicologia | Picada de escorpião
+clinica | 280-281 | Urologia | Abscesso prostático
+clinica | 281-282 | Urologia | Hiperplasia prostática
+clinica | 282-283 | Urologia | Prostatite bacteriana
+posologia | 6-6 | Acidificante urinário — uso oral | Vitasyn
+posologia | 6-6 | Acidificante urinário — uso oral | Vita-VET C
+posologia | 6-6 | Agonista dopaminérgico — uso oral | Selegilina 5mg
+posologia | 6-6 | Analgésicos — uso oral | Dipirona Gotas
+posologia | 6-6 | Analgésicos — uso oral | Cronidor
+posologia | 6-6 | Analgésicos — uso oral | Nulli 40mg/mL
+posologia | 6-7 | Analgésicos — uso oral | Sindolor
+posologia | 7-7 | Analgésicos — uso oral | Sindolor Gatos 50/8
+posologia | 7-7 | Antiácido — uso oral | Hidróxido de Alumínio 300mg/5mL
+posologia | 7-7 | Antiácido — uso oral | Hidróxido de Alumínio 300mg
+posologia | 7-7 | Antiácido — uso oral | Hidróxido de Magnésio 400mg/5mL
+posologia | 7-7 | Antiarrítmico — uso oral | Amiodarona Comprimidos
+posologia | 7-8 | Antiarrítmico — uso oral | Amiodarona Gotas 200mg/mL
+posologia | 8-8 | Antiarrítmico — uso oral | Atenolol
+posologia | 8-8 | Antiarrítmico — uso oral | Mexiletina
+posologia | 8-8 | Antiarrítmico — uso oral | Procainamida 300mg
+posologia | 8-8 | Antiarrítmico — uso oral | Sulfato de Quinidina
+posologia | 8-8 | Antibacteriano — uso oral | Agemoxi CL
+posologia | 8-8 | Antibacteriano — uso oral | Ampicilina Solução Oral 30mg/mL
+posologia | 8-9 | Antibacteriano — uso oral | Azicox-2
+posologia | 9-9 | Antibacteriano — uso oral | Aziplus 200
+posologia | 9-9 | Antibacteriano — uso oral | Baytril Flavour
+posologia | 9-9 | Antibacteriano — uso oral | Biofloxacin
+posologia | 9-9 | Antibacteriano — uso oral | Cefa-Cure
+posologia | 9-9 | Antibacteriano — uso oral | Cefaseptin
+posologia | 9-10 | Antibacteriano — uso oral | Cefa SID
+posologia | 10-10 | Antibacteriano — uso oral | Ceftrat
+posologia | 10-10 | Antibacteriano — uso oral | Celesporin
+posologia | 10-10 | Antibacteriano — uso oral | Clavaseptin P
+posologia | 10-10 | Antibacteriano — uso oral | Diaziprim Oral
+posologia | 10-10 | Antibacteriano — uso oral | Doxiciclina Coveli 80mg
+posologia | 10-10 | Antibacteriano — uso oral | Doxiciclina Vetnil
+posologia | 10-11 | Antibacteriano — uso oral | Doxifin Tabs
+posologia | 11-11 | Antibacteriano — uso oral | Doxitabs
+posologia | 11-11 | Antibacteriano — uso oral | Doxitec
+posologia | 11-11 | Antibacteriano — uso oral | Doxitrat
+posologia | 11-11 | Antibacteriano — uso oral | Doxiven 100mg
+posologia | 11-11 | Antibacteriano — uso oral | Enrotrat Tabs
+posologia | 11-11 | Antibacteriano — uso oral | Flobiotic
+posologia | 11-12 | Antibacteriano — uso oral | Flotril
+posologia | 12-12 | Antibacteriano — uso oral | Giardicid
+posologia | 12-12 | Antibacteriano — uso oral | Ibatrim
+posologia | 12-12 | Antibacteriano — uso oral | Lincomicin 300
+posologia | 12-12 | Antibacteriano — uso oral | Marbocyl P
+posologia | 12-12 | Antibacteriano — uso oral | Norflagen 200mg
+posologia | 12-13 | Antibacteriano — uso oral | Oralguard
+posologia | 13-13 | Antibacteriano — uso oral | PetSporin
+posologia | 13-13 | Antibacteriano — uso oral | Rilexine
+posologia | 13-13 | Antibacteriano — uso oral | Silmox CL
+posologia | 13-13 | Antibacteriano — uso oral | Stomorgyl
+posologia | 13-13 | Antibacteriano — uso oral | Synulox
+posologia | 13-14 | Antibacteriano — uso oral | Vetnidazol
+posologia | 14-14 | Antibacteriano — uso oral | Trissulfin SID
+posologia | 14-14 | Antibacteriano — uso oral | Zelotril
+posologia | 14-14 | Anticoccidianos — uso oral | Amprólio
+posologia | 14-14 | Anticolesterolemia — uso oral | Bezafibrato
+posologia | 14-14 | Anticolesterolemia — uso oral | Sinvastatina
+posologia | 14-14 | Anticonvulsivante — uso oral | Brometo de Potássio
+posologia | 14-14 | Anticonvulsivante — uso oral | Clonazepam
+posologia | 14-15 | Anticonvulsivante — uso oral | Diazepam
+posologia | 15-15 | Anticonvulsivante — uso oral | Gabapentina
+posologia | 15-15 | Anticonvulsivante — uso oral | Gardenal
+posologia | 15-15 | Antidepressivo — uso oral | Amitriptilina
+posologia | 15-15 | Antidepressivo — uso oral | Cloridrato de Clomipramina
+posologia | 15-16 | Antidepressivo — uso oral | Cloridrato de Fluoxetina
+posologia | 16-16 | Antidiarreico — uso oral | Cloridrato de Loperamida 2mg
+posologia | 16-16 | Antiemético — uso oral | Bromoprida
+posologia | 16-16 | Antiemético — uso oral | Cerenia
+posologia | 16-16 | Antiemético — uso oral | Dramin
+posologia | 16-16 | Antiemético — uso oral | Drasil 4mg/mL
+posologia | 16-17 | Antiemético — uso oral | Emedron
+posologia | 17-17 | Antiemético — uso oral | Vonau VET 5mg/mL
+posologia | 17-17 | Antiespasmódico — uso oral | Cloridrato de Oxibutinina
+posologia | 17-17 | Antifibrótico — uso oral | Colchicina
+posologia | 17-17 | Antifúngico — uso oral | Cetoconazol
+posologia | 17-17 | Antifúngico — uso oral | Cetoconazol Suspensão 20%
+posologia | 17-18 | Antifúngico — uso oral | Itraconazol
+posologia | 18-18 | Antigases — uso oral | Luftal 75mg/mL
+posologia | 18-18 | Antigalactogênico — uso oral | ContraLac
+posologia | 18-18 | Antigalactogênico — uso oral | Sec Lac
+posologia | 18-18 | Antiglaucomatosos e/ou inibidores da anidrase carbônica — uso oral | Acetazolamida
+posologia | 18-18 | Anti-hemorrágicos — uso oral | Transamin 250mg
+posologia | 18-19 | Anti-hemorrágicos — uso oral | Ipslon 500mg
+posologia | 19-19 | Anti-hipertensivo — uso oral | Atenolol
+posologia | 19-19 | Anti-hipertensivo — uso oral | Besilato de Anlodipino
+posologia | 19-19 | Anti-hipertensivo — uso oral | Captopril
+posologia | 19-19 | Anti-hipertensivo — uso oral | Prazosina
+posologia | 19-19 | Anti-histamínicos (antialérgico) — uso oral | AlergoVET C
+posologia | 19-19 | Anti-histamínicos (antialérgico) — uso oral | Cloridrato de Prometazina 25mg
+posologia | 19-20 | Anti-histamínicos (antialérgico) — uso oral | Loratadina Xarope 1mg/mL
+posologia | 20-20 | Anti-histamínicos (antialérgico) — uso oral | Histamin 2mg
+posologia | 20-20 | Anti-histamínicos (antialérgico) — uso oral | Histamin 2mg/5mL
+posologia | 20-20 | Anti-histamínicos (antialérgico) — uso oral | Polaramine 2mg
+posologia | 20-20 | Anti-histamínicos (antialérgico) — uso oral | Polaramine 2mg/5mL
+posologia | 20-20 | Anti-inflamatório esteroidal (aie) — uso oral | Alergocort Comprimidos
+posologia | 20-20 | Anti-inflamatório esteroidal (aie) — uso oral | Decadron Comprimidos
+posologia | 21-21 | Anti-inflamatório esteroidal (aie) — uso oral | Dexatabs Vita
+posologia | 21-21 | Anti-inflamatório esteroidal (aie) — uso oral | Meticorten
+posologia | 21-21 | Anti-inflamatório esteroidal (aie) — uso oral | Metilvet
+posologia | 21-21 | Anti-inflamatório esteroidal (aie) — uso oral | Prediderm
+posologia | 21-21 | Anti-inflamatório esteroidal (aie) — uso oral | Prednon 4mg/mL
+posologia | 21-21 | Anti-inflamatório esteroidal (aie) — uso oral | Preditabs
+posologia | 21-22 | Anti-inflamatório esteroidal (aie) — uso oral | Presolona 10mg
+posologia | 22-22 | Anti-inflamatório esteroidal (aie) — uso oral | V-Cort Comprimidos 0.5mg
+posologia | 22-22 | Anti-inflamatório não esteroidal (aine) — uso oral | Aplonal
+posologia | 22-22 | Anti-inflamatório não esteroidal (aine) — uso oral | Azicox-2
+posologia | 22-22 | Anti-inflamatório não esteroidal (aine) — uso oral | Carprofeno
+posologia | 22-22 | Anti-inflamatório não esteroidal (aine) — uso oral | Carproflan
+posologia | 22-22 | Anti-inflamatório não esteroidal (aine) — uso oral | Carprovet
+posologia | 22-23 | Anti-inflamatório não esteroidal (aine) — uso oral | Firocoxib
+posologia | 23-23 | Anti-inflamatório não esteroidal (aine) — uso oral | Firovet Pasta Oral
+posologia | 23-23 | Anti-inflamatório não esteroidal (aine) — uso oral | Flamavet
+posologia | 23-23 | Anti-inflamatório não esteroidal (aine) — uso oral | Galliprant
+posologia | 23-23 | Anti-inflamatório não esteroidal (aine) — uso oral | Kenovet
+posologia | 23-23 | Anti-inflamatório não esteroidal (aine) — uso oral | Ketojet
+posologia | 23-23 | Anti-inflamatório não esteroidal (aine) — uso oral | Maxicam
+posologia | 24-24 | Anti-inflamatório não esteroidal (aine) — uso oral | Maxicam Plus
+posologia | 24-24 | Anti-inflamatório não esteroidal (aine) — uso oral | Maxicam Solução Oral
+posologia | 24-24 | Anti-inflamatório não esteroidal (aine) — uso oral | Maxitec Solução Oral
+posologia | 24-24 | Anti-inflamatório não esteroidal (aine) — uso oral | MellisVET
+posologia | 24-24 | Anti-inflamatório não esteroidal (aine) — uso oral | Meloxinew
+posologia | 24-24 | Anti-inflamatório não esteroidal (aine) — uso oral | Meloxitabs
+posologia | 24-25 | Anti-inflamatório não esteroidal (aine) — uso oral | Onsior
+posologia | 25-25 | Anti-inflamatório não esteroidal (aine) — uso oral | Onsior Gatos
+posologia | 25-25 | Anti-inflamatório não esteroidal (aine) — uso oral | Rimadyl
+posologia | 25-25 | Anti-inflamatório não esteroidal (aine) — uso oral | Syrox
+posologia | 25-25 | Anti-inflamatório não esteroidal (aine) — uso oral | Trocoxil
+posologia | 25-25 | Antipirético — uso oral | Dipirona Gotas
+posologia | 25-26 | Antipirético — uso oral | Dipirona Comprimidos
+posologia | 26-26 | Antipirético — uso oral | Dipirona Gotas 500mg/mL
+posologia | 26-26 | Antiplaquetário — uso oral | Clopidogrel 75mg
+posologia | 26-26 | Antipruriginoso - uso oral | Apoquel
+posologia | 26-26 | Antipruriginoso - uso oral | Cyclavance 100mg/mL
+posologia | 26-26 | Antitóxico — uso oral | Antitóxico Oral
+posologia | 26-26 | Antitóxico — uso oral | Antitóxico Oral
+posologia | 26-26 | Antitóxico — uso oral | Enterex
+posologia | 27-27 | Antitóxico — uso oral | Entox Bio
+posologia | 27-27 | Antitóxico — uso oral | Zeotop
+posologia | 27-27 | Antitussígeno — uso oral | TossiCanis
+posologia | 27-27 | Antitussígeno — uso oral | Tussedan Xarope
+posologia | 27-27 | Antivertiginoso — uso oral | Dicloridrato de Betaistina
+posologia | 27-27 | Antiviral — uso oral | Aciclovir
+posologia | 27-27 | Antiviral — uso oral | Penvir 125mg
+posologia | 27-28 | Antiviral — uso oral | Ribavirina Suspensão 30mg/0.2mL
+posologia | 28-28 | Broncodilatador — uso oral | Aerolin
+posologia | 28-28 | Broncodilatador — uso oral | Aerolin Spray 100mcg/dose
+posologia | 28-28 | Broncodilatador — uso oral | Aminofilina Comprimidos
+posologia | 28-28 | Broncodilatador — uso oral | Albuterol
+posologia | 28-28 | Broncodilatador — uso oral | Pneumoflox
+posologia | 28-28 | Broncodilatador — uso oral | Teofilina
+posologia | 28-29 | Broncodilatador — uso oral | Terbutalina
+posologia | 29-29 | Catárticos e/ou laxantes — uso oral | Bisacodil 5mg
+posologia | 29-29 | Catárticos e/ou laxantes — uso oral | Lactulona 10g/15mL
+posologia | 29-29 | Catárticos e/ou laxantes — uso oral | Óleo Mineral
+posologia | 29-29 | Colerético — uso oral | Ursacol
+posologia | 29-29 | Diuréticos — uso oral | Furolisin
+posologia | 29-29 | Diuréticos — uso oral | Torzemin
+posologia | 29-30 | Diuréticos — uso oral | UpCard
+posologia | 30-30 | Ectoparasiticida — uso oral | Bravecto
+posologia | 30-30 | Ectoparasiticida — uso oral | Capstar
+posologia | 30-30 | Ectoparasiticida — uso oral | Credeli
+posologia | 30-30 | Ectoparasiticida — uso oral | Credeli Gatos
+posologia | 30-30 | Ectoparasiticida — uso oral | Defenza
+posologia | 30-30 | Ectoparasiticida — uso oral | Nexgard
+posologia | 30-31 | Ectoparasiticida — uso oral | Simparic
+posologia | 31-31 | Endectoparasiticida — uso oral | Credeli Plus
+posologia | 31-31 | Endectoparasiticida — uso oral | Nexgard Spectra
+posologia | 31-31 | Endoparasiticida — uso oral | Basken Plus
+posologia | 31-31 | Endoparasiticida — uso oral | Basken Suspensão
+posologia | 31-31 | Endoparasiticida — uso oral | Basken Suspensão 5
+posologia | 31-31 | Endoparasiticida — uso oral | Drontal Gatos
+posologia | 31-31 | Endoparasiticida — uso oral | Drontal Plus Mais Sabor
+posologia | 31-32 | Endoparasiticida — uso oral | Drontal Plus Sabor Carne
+posologia | 32-32 | Endoparasiticida — uso oral | Drontal Puppy
+posologia | 32-32 | Endoparasiticida — uso oral | Endal Plus
+posologia | 32-32 | Endoparasiticida — uso oral | Endogard
+posologia | 32-32 | Endoparasiticida — uso oral | Fenzol PET 500mg
+posologia | 32-32 | Endoparasiticida — uso oral | Maxiverm 660mg
+posologia | 32-32 | Endoparasiticida — uso oral | Mebendazole
+posologia | 33-33 | Endoparasiticida — uso oral | Milbemax C 5kg
+posologia | 33-33 | Endoparasiticida — uso oral | Milbemax C 5-25kg
+posologia | 33-33 | Endoparasiticida — uso oral | Milbemax G 2kg
+posologia | 33-33 | Endoparasiticida — uso oral | Milbemax G 2-8kg
+posologia | 33-33 | Endoparasiticida — uso oral | Milteforan
+posologia | 33-33 | Endoparasiticida — uso oral | Multitec
+posologia | 33-33 | Endoparasiticida — uso oral | Panacur 10%
+posologia | 34-34 | Endoparasiticida — uso oral | Top Dog
+posologia | 34-34 | Endoparasiticida — uso oral | Top Gard
+posologia | 34-34 | Endoparasiticida — uso oral | Top Gard Puppy
+posologia | 34-34 | Endoparasiticida — uso oral | Top Gard Plus
+posologia | 34-34 | Endoparasiticida — uso oral | Vetmax Plus Comprimido
+posologia | 34-34 | Endoparasiticida — uso oral | Vetmax Plus suspensão
+posologia | 34-34 | Expectorante e/ou mucolítico — uso oral | Mucomucil Xarope
+posologia | 34-35 | Expectorante e/ou mucolítico — uso oral | Acetilcisteína Xarope Adulto 40mg/mL
+posologia | 35-35 | Expectorante e/ou mucolítico — uso oral | Carbocisteína
+posologia | 35-35 | Expectorante e/ou mucolítico — uso oral | Cloridrato de Bromexina Xarope Adulto 8mg/5mL
+posologia | 35-35 | Hipoglicemiante — uso oral | Acarbose
+posologia | 35-35 | Hormônio — uso oral | Puran T4
+posologia | 35-35 | Imunoestimulante — uso oral | Leucogen 20mg/mL
+posologia | 35-36 | Imunossupressor — uso oral | Azatioprina
+posologia | 36-36 | Imunossupressor — uso oral | Metilvet
+posologia | 36-36 | Imunossupressor — uso oral | Prediderm
+posologia | 36-36 | Imunossupressor — uso oral | Prednon 4mg/mL
+posologia | 36-36 | Imunossupressor — uso oral | Presolona 10mg
+posologia | 36-37 | Imunossupressor — uso oral | V-Cort Comprimidos 0.5mg
+posologia | 37-37 | Inibidor de esteroidogênese adrenal — uso oral | Trilostec
+posologia | 37-37 | Inibidor de esteroidogênese adrenal — uso oral | Vetoryl
+posologia | 37-37 | Inibidor de secreção ácido-gástrica e protetor gástrico — uso oral | Gastroblock 10mg
+posologia | 37-37 | Inibidor de secreção ácido-gástrica e protetor gástrico — uso oral | Petprazol
+posologia | 37-37 | Inibidor de secreção ácido-gástrica e protetor gástrico — uso oral | Gaviz V
+posologia | 37-38 | Inibidor de secreção ácido-gástrica e protetor gástrico — uso oral | Sucralfato
+posologia | 38-38 | Inibidor de secreção ácido-gástrica e protetor gástrico — uso oral | Cimetidina
+posologia | 38-38 | Inibidor de secreção ácido-gástrica e protetor gástrico — uso oral | Ranivet 80mg
+posologia | 38-38 | Inibidor enzimático e/ou redutor de ácido úrico — uso oral | Alopurinol
+posologia | 38-38 | Inotrópico — uso oral | Becordil 5mg
+posologia | 38-38 | Inotrópico — uso oral | Cardalis
+posologia | 38-38 | Inotrópico — uso oral | Fortekor Duo
+posologia | 38-38 | Inotrópico — uso oral | Fortekor Flavour 5mg
+posologia | 39-39 | Inotrópico — uso oral | Vetmedin
+posologia | 39-39 | Orexígeno (estimulante de apetite) — uso oral | Elura
+posologia | 39-39 | Orexígeno (estimulante de apetite) — uso oral | Mirtz 2mg
+posologia | 39-39 | Pró-cinético (anti-regurgitante) — uso oral | Cisaprida
+posologia | 39-39 | Retinóide — uso oral | Roacutan
+posologia | 39-39 | Sedativo — uso oral | Acepran Gotas 10mg/mL
+posologia | 39-40 | Sedativo — uso oral | Aceproven Gotas 10mg/mL
+posologia | 40-40 | Sedativo — uso oral | Apromazin Gotas
+posologia | 40-40 | Sedativo — uso oral | Apromazina Gotas 10mg/mL
+posologia | 40-40 | Vascular - uso oral | Becordil 5mg
+posologia | 40-40 | Vascular - uso oral | Fortekor Flavour 5mg
+posologia | 40-40 | Vascular - uso oral | Petpril
+posologia | 40-40 | Vascular - uso oral | Proex
+posologia | 41-41 | Vascular - uso oral | Revimax 50mg
+posologia | 41-41 | Vascular - uso oral | Semintra 4mg/mL
+posologia | 41-41 | Suplemento antiviral adjuvante — uso oral | Lysin Cat SF
+posologia | 41-41 | Suplemento antiviral adjuvante — uso oral | Lysin Cat Emulgel
+posologia | 41-41 | Suplemento calmante e/ou redutor de estresse — uso oral | Calmisyn TP
+posologia | 41-41 | Suplemento calmante e/ou redutor de estresse — uso oral | Calmyn Cat
+posologia | 41-41 | Suplemento calmante e/ou redutor de estresse — uso oral | Calmyn Cat Snacks
+posologia | 41-41 | Suplemento calmante e/ou redutor de estresse — uso oral | Calmyn Dog
+posologia | 41-41 | Suplemento calmante e/ou redutor de estresse — uso oral | Calmyn Dog Sticks
+posologia | 42-42 | Suplemento calmante e/ou redutor de estresse — uso oral | Calmyn & Susse Dog
+posologia | 42-42 | Suplemento calmante e/ou redutor de estresse — uso oral | Serenlac
+posologia | 42-42 | Suplemento calmante e/ou redutor de estresse — uso oral | Seren Pasta
+posologia | 42-42 | Suplemento calmante e/ou redutor de estresse — uso oral | Seren Snacks
+posologia | 42-42 | Suplemento calmante e/ou redutor de estresse — uso oral | Quetin
+posologia | 42-42 | Suplemento cardiológico — uso oral | Encor Dog
+posologia | 42-42 | Suplemento cardiológico — uso oral | Kardio Snacks
+posologia | 42-43 | Suplemento cardiológico — uso oral | PET Slim
+posologia | 43-43 | Suplemento condroprotetor e/ou articular — uso oral | Artrotabs Pasta
+posologia | 43-43 | Suplemento condroprotetor e/ou articular — uso oral | Artroplus Dog Premium
+posologia | 43-43 | Suplemento condroprotetor e/ou articular — uso oral | Artrotabs Stick’s
+posologia | 43-43 | Suplemento condroprotetor e/ou articular — uso oral | Artrotabs VET
+posologia | 43-43 | Suplemento condroprotetor e/ou articular — uso oral | Ativi 40mg
+posologia | 43-43 | Suplemento condroprotetor e/ou articular — uso oral | Colágeno Dog Tabs
+posologia | 43-43 | Suplemento condroprotetor e/ou articular — uso oral | Condrix Dog Tabs
+posologia | 43-43 | Suplemento condroprotetor e/ou articular — uso oral | Condro Dog
+posologia | 44-44 | Suplemento condroprotetor e/ou articular — uso oral | Condromax PET 1.200mg
+posologia | 44-44 | Suplemento condroprotetor e/ou articular — uso oral | Condroplex
+posologia | 44-44 | Suplemento condroprotetor e/ou articular — uso oral | Condroplex LB
+posologia | 44-44 | Suplemento condroprotetor e/ou articular — uso oral | Condroplex LB Stick’s
+posologia | 44-44 | Suplemento condroprotetor e/ou articular — uso oral | Condroplex Pasta
+posologia | 44-44 | Suplemento condroprotetor e/ou articular — uso oral | Condroplex Sticks
+posologia | 44-44 | Suplemento condroprotetor e/ou articular — uso oral | Condrotec PET Fácil
+posologia | 44-44 | Suplemento condroprotetor e/ou articular — uso oral | Condroton
+posologia | 44-44 | Suplemento condroprotetor e/ou articular — uso oral | Ograx Artro
+posologia | 44-45 | Suplemento condroprotetor e/ou articular — uso oral | Ospogenase
+posologia | 45-45 | Suplemento condroprotetor e/ou articular — uso oral | Osporin 500
+posologia | 45-45 | Suplemento condroprotetor e/ou articular — uso oral | Osporin 1000
+posologia | 45-45 | Suplemento condroprotetor e/ou articular — uso oral | Osteocart Plus
+posologia | 45-45 | Suplemento condroprotetor e/ou articular — uso oral | Osteosyn
+posologia | 45-45 | Suplemento condroprotetor e/ou articular — uso oral | Procart
+posologia | 45-45 | Suplemento condroprotetor e/ou articular — uso oral | Procart Flex
+posologia | 45-45 | Suplemento condroprotetor e/ou articular — uso oral | Uree Snacks
+posologia | 45-45 | Suplemento de bola de pelo — uso oral | Ball Feline Cat Snacks
+posologia | 45-45 | Suplemento de bola de pelo — uso oral | Ball Free
+posologia | 46-46 | Suplemento de bola de pelo — uso oral | Cat Malt
+posologia | 46-46 | Suplemento de bola de pelo — uso oral | HB Fel
+posologia | 46-46 | Suplemento de bola de pelo — uso oral | Nutrisana Malt Past
+posologia | 46-46 | Suplemento dermatológico — uso oral | Aliv PET
+posologia | 46-46 | Suplemento dermatológico — uso oral | Beneflora Derme
+posologia | 46-46 | Suplemento dermatológico — uso oral | Demevert Cápsula
+posologia | 46-46 | Suplemento dermatológico — uso oral | Deratopic Dog Tabs
+posologia | 46-46 | Suplemento dermatológico — uso oral | Dermapet
+posologia | 46-46 | Suplemento dermatológico — uso oral | Keratin Dog
+posologia | 46-47 | Suplemento dermatológico — uso oral | Ograx Derme
+posologia | 47-47 | Suplemento dermatológico — uso oral | PeleFood Cat Pasta
+posologia | 47-47 | Suplemento dermatológico — uso oral | PeleFood Dog Tabs
+posologia | 47-47 | Suplemento dermatológico — uso oral | PeleFood Dog Pó
+posologia | 47-47 | Suplemento dermatológico — uso oral | Pelo & Derme 750
+posologia | 47-47 | Suplemento dermatológico — uso oral | Pelo & Derme 1500
+posologia | 47-47 | Suplemento dermatológico — uso oral | Pelo & Derme Gold
+posologia | 47-47 | Suplemento dermatológico — uso oral | Plenipil Snacks
+posologia | 48-48 | Suplemento dermatológico — uso oral | Queranon
+posologia | 48-48 | Suplemento dermatológico — uso oral | Queranon LB
+posologia | 48-48 | Suplemento dermatológico — uso oral | Queranon Pasta
+posologia | 48-48 | Suplemento dermatológico — uso oral | Queranon Small Size
+posologia | 48-48 | Suplemento dermatológico — uso oral | Queranon Stick’s
+posologia | 48-48 | Suplemento dermatológico — uso oral | Refos Derme
+posologia | 48-48 | Suplemento dermatológico — uso oral | Vitasil Pelo
+posologia | 48-48 | Suplemento dermatológico — uso oral | Vitasil Pelo 2000
+posologia | 48-49 | Suplemento dermatológico — uso oral | Zenrelia
+posologia | 49-49 | Suplemento eletrolítico — uso oral | Biolyte
+posologia | 49-49 | Suplemento eletrolítico — uso oral | Eletrolítico PET
+posologia | 49-49 | Suplemento eletrolítico (cálcio) — uso oral | Cálcio For
+posologia | 49-49 | Suplemento eletrolítico (cálcio) — uso oral | Cálcio For Suspensão
+posologia | 49-49 | Suplemento eletrolítico (cálcio) — uso oral | Cal-d-mix Suspensão
+posologia | 49-50 | Suplemento eletrolítico (potássio) — uso oral | Kalium VET
+posologia | 50-50 | Suplemento eletrolítico (potássio) — uso oral | Kalium VET Gatos
+posologia | 50-50 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Babyflora
+posologia | 50-50 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Beneflora VET
+posologia | 50-50 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Beneflora Gatos
+posologia | 50-50 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Beneflora Oro
+posologia | 50-50 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Biocanis
+posologia | 50-50 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Bionaturalis
+posologia | 50-50 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Diarril
+posologia | 50-50 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Enterofort Comprimido
+posologia | 50-50 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Enterofort Pasta
+posologia | 51-51 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Entrin Dog
+posologia | 51-51 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Lactobac Cat
+posologia | 51-51 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Lactobac Cat Plus
+posologia | 51-51 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Lactobac Dog
+posologia | 51-51 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Lactobac Dog Plus
+posologia | 51-51 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Lactobac Dog Plus Tabs
+posologia | 51-51 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | LactoFull
+posologia | 51-51 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Levuflora Pré e Probiótico
+posologia | 51-51 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Organew PET
+posologia | 51-51 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Organew PET Pasta
+posologia | 51-51 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Post Biotic
+posologia | 51-51 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Probiótico PET
+posologia | 52-52 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Probiótico Vetnil
+posologia | 52-52 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Probiot PET
+posologia | 52-52 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Probsil
+posologia | 52-52 | Suplemento gastrointestinal (prebiótico, probiótico, simbiótico) — uso oral | Up Flora
+posologia | 52-52 | Suplemento geriátrico — uso oral | Compplet Mix Idosos
+posologia | 52-52 | Suplemento geriátrico — uso oral | Geriatric Cat Plus
+posologia | 52-52 | Suplemento geriátrico — uso oral | Geriatric Plus
+posologia | 52-52 | Suplemento geriátrico — uso oral | Gerioox
+posologia | 52-52 | Suplemento geriátrico — uso oral | Geripet
+posologia | 53-53 | Suplemento geriátrico — uso oral | Geripet Snacks
+posologia | 53-53 | Suplemento geriátrico — uso oral | Gerokon
+posologia | 53-53 | Suplemento geriátrico — uso oral | Seniox-T
+posologia | 53-53 | Suplemento geriátrico — uso oral | Seniox 500
+posologia | 53-53 | Suplemento geriátrico — uso oral | Seniox 1000
+posologia | 53-53 | Suplemento geriátrico — uso oral | Vitasil Senior
+posologia | 53-53 | Suplemento hematopoiético — uso oral | Eritrós Cat Pasta
+posologia | 53-53 | Suplemento hematopoiético — uso oral | Eritrós Dog Tabs
+posologia | 53-53 | Suplemento hematopoiético — uso oral | Hemolipet Comprimidos
+posologia | 53-54 | Suplemento hematopoiético — uso oral | Hemolipet Suspensão
+posologia | 54-54 | Suplemento hematopoiético — uso oral | Hemolitan Gold Comprimido
+posologia | 54-54 | Suplemento hematopoiético — uso oral | Hemolitan Gold Suspensão
+posologia | 54-54 | Suplemento hematopoiético — uso oral | Hemolitan PET Comprimido
+posologia | 54-54 | Suplemento hematopoiético — uso oral | Hemolitan PET Suspensão
+posologia | 54-54 | Suplemento hematopoiético — uso oral | Metacell PET
+posologia | 54-54 | Suplemento hematopoiético — uso oral | Metacell PET Snacks
+posologia | 54-54 | Suplemento hematopoiético — uso oral | Red Up Dog
+posologia | 54-54 | Suplemento hepatoprotetor — uso oral | Epoclean Dog
+posologia | 54-54 | Suplemento hepatoprotetor — uso oral | Hepguard
+posologia | 54-54 | Suplemento hepatoprotetor — uso oral | Hepvet Comprimidos
+posologia | 54-54 | Suplemento hepatoprotetor — uso oral | Hepvet Suspensão
+posologia | 55-55 | Suplemento hepatoprotetor — uso oral | Hep VITA 1500mg
+posologia | 55-55 | Suplemento hepatoprotetor — uso oral | Hep VITA Pasta
+posologia | 55-55 | Suplemento hepatoprotetor — uso oral | Prohep Cat
+posologia | 55-55 | Suplemento hepatoprotetor — uso oral | Prohep Dog Pasta
+posologia | 55-55 | Suplemento hepatoprotetor — uso oral | Sanus
+posologia | 55-55 | Suplemento hepatoprotetor — uso oral | Silimarina
+posologia | 55-55 | Suplemento hepatoprotetor — uso oral | Silitec Fácil
+posologia | 55-55 | Suplemento hepatoprotetor — uso oral | Trihepat
+posologia | 55-55 | Suplemento hepatoprotetor — uso oral | Vitasil Hep Suspensão
+posologia | 56-56 | Suplemento hepatoprotetor — uso oral | Vitasil Hep Comprimidos
+posologia | 56-56 | Suplemento hipercalórico — uso oral | Hiperkcal Nutricuper Cat
+posologia | 56-56 | Suplemento hipercalórico — uso oral | Nutralife
+posologia | 56-56 | Suplemento hipercalórico — uso oral | Nutralife Intensiv
+posologia | 56-56 | Suplemento hipercalórico — uso oral | NutraPET
+posologia | 56-56 | Suplemento hipercalórico — uso oral | Nutricuper Dog
+posologia | 56-56 | Suplemento hipercalórico — uso oral | Nutrifull Cat
+posologia | 56-56 | Suplemento hipercalórico — uso oral | Nutrifull Dog
+posologia | 56-56 | Suplemento hipercalórico — uso oral | Nutrisyn Plus HC
+posologia | 56-56 | Suplemento imunoestimulante — uso oral | Defensyn
+posologia | 56-57 | Suplemento imunoestimulante — uso oral | Imunees Snacks
+posologia | 57-57 | Suplemento imunoestimulante — uso oral | Imunizan Cat
+posologia | 57-57 | Suplemento imunoestimulante — uso oral | Imunizan PET
+posologia | 57-57 | Suplemento imunoestimulante — uso oral | Macrogard Pasta
+posologia | 57-57 | Suplemento imunoestimulante — uso oral | Macrogard PET
+posologia | 57-57 | Suplemento imunoestimulante — uso oral | Macrogard PET Stick
+posologia | 57-57 | Suplemento imunoestimulante — uso oral | Macrogard Small Size
+posologia | 57-57 | Suplemento imunoestimulante — uso oral | Munnomax
+posologia | 57-57 | Suplemento imunoestimulante — uso oral | Promun Cat Pasta
+posologia | 57-57 | Suplemento imunoestimulante — uso oral | Promun Cat Pó
+posologia | 57-57 | Suplemento imunoestimulante — uso oral | Promun Defense Boost Cat
+posologia | 57-57 | Suplemento imunoestimulante — uso oral | Promun Defense Boost Dog
+posologia | 57-57 | Suplemento imunoestimulante — uso oral | Promun Dog
+posologia | 58-58 | Suplemento imunoestimulante — uso oral | Promun Dog Neo-P
+posologia | 58-58 | Suplemento imunoestimulante — uso oral | Promun Dog Sticks
+posologia | 58-58 | Suplemento imunoestimulante — uso oral | Promun Dog Tabs
+posologia | 58-58 | Suplemento lácteo — uso oral | PET Milk
+posologia | 58-58 | Suplemento lipídico (ácidos graxos essenciais) — uso oral | HidraPET Ômega
+posologia | 58-58 | Suplemento lipídico (ácidos graxos essenciais) — uso oral | O.G.3 500
+posologia | 58-58 | Suplemento lipídico (ácidos graxos essenciais) — uso oral | O.G.3 1000
+posologia | 58-58 | Suplemento lipídico (ácidos graxos essenciais) — uso oral | Ograx-3 500
+posologia | 59-59 | Suplemento lipídico (ácidos graxos essenciais) — uso oral | Ograx-3 1000
+posologia | 59-59 | Suplemento lipídico (ácidos graxos essenciais) — uso oral | Ograx-3 1500
+posologia | 59-59 | Suplemento lipídico (ácidos graxos essenciais) — uso oral | Ograx Baby
+posologia | 59-59 | Suplemento lipídico (ácidos graxos essenciais) — uso oral | Ograx Gatos
+posologia | 59-59 | Suplemento lipídico (ácidos graxos essenciais) — uso oral | Ograx Plus 5
+posologia | 59-59 | Suplemento lipídico (ácidos graxos essenciais) — uso oral | Ograx Plus 15
+posologia | 59-59 | Suplemento lipídico (ácidos graxos essenciais) — uso oral | Omega 3+6+D Cat
+posologia | 59-59 | Suplemento lipídico (ácidos graxos essenciais) — uso oral | Ômega 3 Dog
+posologia | 59-59 | Suplemento lipídico (ácidos graxos essenciais) — uso oral | Ômega 3+SE
+posologia | 60-60 | Suplemento lipídico (ácidos graxos essenciais) — uso oral | Ômega 3 VET
+posologia | 60-60 | Suplemento lipídico (ácidos graxos essenciais) — uso oral | Omegatop 3
+posologia | 60-60 | Suplemento lipídico (ácidos graxos essenciais) — uso oral | Oxcell 500
+posologia | 60-60 | Suplemento lipídico (ácidos graxos essenciais) — uso oral | Oxcell 1000
+posologia | 60-60 | Suplemento lipídico (ácidos graxos essenciais) — uso oral | Plenipil Snacks
+posologia | 60-60 | Suplemento metabólico — uso oral | Aminomix Gold
+posologia | 60-60 | Suplemento metabólico — uso oral | Aminomix PET
+posologia | 60-60 | Suplemento metabólico — uso oral | Compplet Mix Adultos
+posologia | 60-61 | Suplemento metabólico — uso oral | Compplet Mix Filhotes
+posologia | 61-61 | Suplemento metabólico — uso oral | Creatina E 100
+posologia | 61-61 | Suplemento metabólico — uso oral | Nutrapet
+posologia | 61-61 | Suplemento metabólico — uso oral | PET Slim
+posologia | 61-61 | Suplemento metabólico — uso oral | Silitec Fácil
+posologia | 61-61 | Suplemento metabólico e energético — uso oral | Energy Dog
+posologia | 61-61 | Suplemento metabólico e energético — uso oral | Energy PET
+posologia | 61-61 | Suplemento metabólico e energético — uso oral | Glicol PET
+posologia | 61-62 | Suplemento metabólico e energético — uso oral | Glicopan Gold Comprimido
+posologia | 62-62 | Suplemento metabólico e energético — uso oral | Glicopan Gold Suspensão
+posologia | 62-62 | Suplemento metabólico e energético — uso oral | Glicopan PET
+posologia | 62-62 | Suplemento metabólico e energético — uso oral | GlicoPET
+posologia | 62-62 | Suplemento metabólico e energético — uso oral | Vitasil Energy
+posologia | 62-62 | Suplemento neurológico — uso oral | Nutralogic Mastigáveis
+posologia | 62-62 | Suplemento neurológico — uso oral | Nutralogic PET
+posologia | 62-62 | Suplemento neurológico — uso oral | Seniox-T
+posologia | 62-62 | Suplemento neurológico — uso oral | Seniox 500
+posologia | 62-63 | Suplemento neurológico — uso oral | Seniox 1000
+posologia | 63-63 | Suplemento para trato urinário — uso oral | Cistimicin VET
+posologia | 63-63 | Suplemento para trato urinário — uso oral | Cistin Dog
+posologia | 63-63 | Suplemento para trato urinário — uso oral | Cyst-AID PET Gel
+posologia | 63-63 | Suplemento para trato urinário — uso oral | Feluro
+posologia | 63-63 | Suplemento obstétrico — uso oral | Mega Mater PET
+posologia | 63-63 | Suplemento obstétrico — uso oral | Metacell PET
+posologia | 63-63 | Suplemento oftálmico — uso oral | Lacri Caps PET
+posologia | 63-63 | Suplemento orexígeno (estimulante de apetite) — uso oral | Apevitin BC
+posologia | 64-64 | Suplemento orexígeno (estimulante de apetite) — uso oral | Periatin 4mg
+posologia | 64-64 | Suplemento protéico — uso oral | Caninu’s Protein Bar
+posologia | 64-64 | Suplemento protéico — uso oral | Ideal Protein Cat
+posologia | 64-64 | Suplemento protéico — uso oral | Longil Snacks
+posologia | 64-64 | Suplemento protéico — uso oral | Muscle Dog Pó
+posologia | 64-64 | Suplemento protéico — uso oral | Muscle Dog Sachê
+posologia | 64-64 | Suplemento protéico — uso oral | PET Protein
+posologia | 64-65 | Suplemento protéico — uso oral | Sarcopen VET
+posologia | 65-65 | Suplemento renal — uso oral | Pronefra
+posologia | 65-65 | Suplemento renal — uso oral | Rennaiz Snacks
+posologia | 65-65 | Suplemento renal — uso oral | Rennapro Cat
+posologia | 65-65 | Suplemento renal — uso oral | Rennapro Cat
+posologia | 65-65 | Suplemento vitamínico — uso oral | D3 VET
+posologia | 65-65 | Suplemento vitamínico — uso oral | Doss VET
+posologia | 65-66 | Suplemento vitamínico — uso oral | Enfol Comprimidos
+posologia | 66-66 | Suplemento vitamínico — uso oral | Enfol Solução Oral 0.2mg/mL
+posologia | 66-66 | Suplemento vitamínico — uso oral | Foli B
+posologia | 66-66 | Suplemento vitamínico — uso oral | Vita D
+posologia | 66-66 | Suplemento vitamínico — uso oral | Vitamina D3
+posologia | 66-66 | Suplemento vitamínico — uso oral | Vitasyn
+posologia | 66-66 | Suplemento vitamínico — uso oral | Vita-VET C
+posologia | 66-66 | Suplemento vitamínico — uso oral | Vitecol
+posologia | 66-66 | Antisséptico — uso odontológico | Halitodine Spray
+posologia | 66-66 | Antisséptico — uso odontológico | Odontogard Spray
+posologia | 67-67 | Antisséptico — uso odontológico | Periovet Gel
+posologia | 67-67 | Antisséptico — uso odontológico | Periovet Spray
+posologia | 67-67 | Higienizador bucal - uso odontológico | Aquadent Fresh
+posologia | 67-67 | Higienizador bucal - uso odontológico | Dental Guard Suave Abrasão
+posologia | 67-67 | Higienizador bucal - uso odontológico | C.E.T Pasta Enzimática
+posologia | 67-67 | Higienizador bucal - uso odontológico | Espuma Bucal
+posologia | 67-67 | Higienizador bucal - uso odontológico | Geltec
+posologia | 67-67 | Higienizador bucal - uso odontológico | Odontogard Creme
+posologia | 67-67 | Higienizador bucal - uso odontológico | Solução Bucal
+posologia | 67-67 | Higienizador bucal - uso odontológico | Vetradent Pasta
+posologia | 67-67 | Higienizador bucal - uso odontológico | Vetradent Spray
+posologia | 67-68 | Antibacteriano — uso oftálmico | Ciprovet
+posologia | 68-68 | Antibacteriano — uso oftálmico | Keravit
+posologia | 68-68 | Antibacteriano — uso oftálmico | Regencel Pomada
+posologia | 68-68 | Antibacteriano — uso oftálmico | Zymar
+posologia | 68-68 | Antibacteriano — uso oftálmico | Tobrasyn
+posologia | 68-68 | Antibacteriano — uso oftálmico | Visione
+posologia | 68-68 | Antiglaucomatosos e/ou inibidores da anidrase carbônica - uso oftálmico | Dorzolamida
+posologia | 68-68 | Anti-inflamatório esteroidal (aie) — uso oftálmico | Keravit
+posologia | 68-68 | Anti-inflamatório esteroidal (aie) — uso oftálmico | Optimmune
+posologia | 68-69 | Anti-inflamatório não esteroidal (aine) — uso oftálmico | Still
+posologia | 69-69 | Glicosaminoglicanos — uso oftálmico | Tears
+posologia | 69-69 | Higienizador periocular — uso oftálmico | Eye Clean Up
+posologia | 69-69 | Higienizador periocular — uso oftálmico | Lacrigard
+posologia | 69-69 | Higienizador periocular — uso oftálmico | Optivet Clean
+posologia | 69-69 | Lubrificante e/ou lágrima artificial — uso oftálmico | Acqua Limp
+posologia | 69-69 | Lubrificante e/ou lágrima artificial — uso oftálmico | Allequa
+posologia | 69-69 | Lubrificante e/ou lágrima artificial — uso oftálmico | Lacri
+posologia | 69-69 | Lubrificante e/ou lágrima artificial — uso oftálmico | Optivet Tears
+posologia | 69-69 | Antibacteriano + antifúngico + anti-inflamatório esteroidal (aie) — uso otológico | Aurigen
+posologia | 69-69 | Antibacteriano + antifúngico + anti-inflamatório esteroidal (aie) — uso otológico | Auritop
+posologia | 70-70 | Antibacteriano + antifúngico + anti-inflamatório esteroidal (aie) — uso otológico | Aurivet
+posologia | 70-70 | Antibacteriano + antifúngico + anti-inflamatório esteroidal (aie) — uso otológico | Cipro-otic
+posologia | 70-70 | Antibacteriano + antifúngico + anti-inflamatório esteroidal (aie) — uso otológico | Easotic
+posologia | 70-70 | Antibacteriano + antifúngico + anti-inflamatório esteroidal (aie) — uso otológico | Neptra
+posologia | 70-70 | Antibacteriano + antifúngico + anti-inflamatório esteroidal (aie) — uso otológico | Osurnia
+posologia | 70-70 | Antibacteriano + antifúngico + anti-inflamatório esteroidal (aie) — uso otológico | Otocalm
+posologia | 70-70 | Antibacteriano + antifúngico + anti-inflamatório esteroidal (aie) — uso otológico | Otomax
+posologia | 70-70 | Antibacteriano + antifúngico + anti-inflamatório esteroidal (aie) — uso otológico | Otosyn
+posologia | 70-70 | Antibacteriano + antifúngico + anti-inflamatório esteroidal (aie) — uso otológico | Posatex
+posologia | 70-71 | Antibacteriano + antifúngico + anti-inflamatório esteroidal (aie) — uso otológico | Zelotril Oto
+posologia | 71-71 | Anti-inflamatório esteroidal (aie) — uso otológico | Cortotic
+posologia | 71-71 | Antisséptico — uso otológico | Sept Clean Oto
+posologia | 71-71 | Higienizador auricular — uso otológico | Aurigard
+posologia | 71-71 | Higienizador auricular — uso otológico | Auritec 100mL
+posologia | 71-71 | Higienizador auricular — uso otológico | Aurivet Clean
+posologia | 71-71 | Higienizador auricular — uso otológico | Aurivet Clean pH Neutro
+posologia | 71-71 | Higienizador auricular — uso otológico | Cerumisyn
+posologia | 71-71 | Higienizador auricular — uso otológico | Clean-Up
+posologia | 72-72 | Higienizador auricular — uso otológico | Dermogen Oto
+posologia | 72-72 | Higienizador auricular — uso otológico | Epiotic
+posologia | 72-72 | Higienizador auricular — uso otológico | Limp & Hidrat
+posologia | 72-72 | Higienizador auricular — uso otológico | Oat Care Oto
+posologia | 72-72 | Higienizador auricular — uso otológico | Otiflex Limpiador
+posologia | 72-72 | Higienizador auricular — uso otológico | Phisio Antiodor Limpador Auricular
+posologia | 72-72 | Higienizador auricular — uso otológico | Removedor de Cerúmen
+posologia | 72-72 | Higienizador auricular — uso otológico | Solução de Limpeza Otológica
+posologia | 72-73 | Higienizador auricular — uso otológico | Surosolve
+posologia | 73-73 | Analgésico — uso tópico | Alumex
+posologia | 73-73 | Antibacteriano + antifúngico + anti-inflamatório esteroidal (aie) — uso tópico | Dermotrat Aerosol
+posologia | 73-73 | Antibacteriano + antifúngico + anti-inflamatório esteroidal (aie) — uso tópico | Dermotrat Creme
+posologia | 73-73 | Antibacteriano + anti-inflamatório esteroidal (aie) — uso tópico | Terracam Spray
+posologia | 73-73 | Antifúngico — uso tópico | Cetoconazol Shampoo 2%
+posologia | 73-73 | Antifúngico — uso tópico | Cetoconazol Spray 2%
+posologia | 73-73 | Anti-inflamatório esteroidal (aie) — uso tópico | Cortavance
+posologia | 73-74 | Anti-inflamatório esteroidal (aie) — uso tópico | DM-Gel
+posologia | 74-74 | Antisséptico — uso tópico | Furanil Pomada
+posologia | 74-74 | Antisséptico — uso tópico | Furanil Solução
+posologia | 74-74 | Antisséptico — uso tópico | Pomada Cicatrizante
+posologia | 74-74 | Antisséptico — uso tópico | Tergenvet PET Spray
+posologia | 74-74 | Banho a seco — uso tópico | Banho Seco
+posologia | 74-74 | Banho a seco — uso tópico | Banho Seco Spray dos Sonhos
+posologia | 74-74 | Banho a seco — uso tópico | Phisioderm Banho Seco
+posologia | 74-74 | Cicatrizantes — uso tópico | Alantol Pomada
+posologia | 74-74 | Cicatrizantes — uso tópico | Cikadol Pomada
+posologia | 74-74 | Cicatrizantes — uso tópico | Crema 6A Pomada
+posologia | 74-74 | Cicatrizantes — uso tópico | Colagenase Pomada
+posologia | 75-75 | Cicatrizantes — uso tópico | Fitofix Gel
+posologia | 75-75 | Cicatrizantes — uso tópico | Kuraderm Prata Aerossol
+posologia | 75-75 | Cicatrizantes — uso tópico | Organnact Prata Aerossol
+posologia | 75-75 | Cicatrizantes — uso tópico | PSK Repair System Spray
+posologia | 75-75 | Cicatrizantes — uso tópico | Regepil Spray
+posologia | 75-75 | Cicatrizantes — uso tópico | Vetaglós Pomada
+posologia | 75-75 | Ectoparasiticida coleira — uso tópico | Ectofend Coleira
+posologia | 75-75 | Ectoparasiticida coleira — uso tópico | Frontmax Coleira
+posologia | 75-75 | Ectoparasiticida coleira — uso tópico | Leevre Coleira
+posologia | 75-75 | Ectoparasiticida coleira — uso tópico | Scalibor Coleira
+posologia | 76-76 | Ectoparasiticida coleira — uso tópico | Seresto Coleira
+posologia | 76-76 | Ectoparasiticida spot on — uso tópico | Activyl
+posologia | 76-76 | Ectoparasiticida spot on — uso tópico | Bravecto Transdermal Cães
+posologia | 76-76 | Ectoparasiticida spot on — uso tópico | Bravecto Transdermal Gatos
+posologia | 76-76 | Ectoparasiticida spot on — uso tópico | Defend PRO Cães
+posologia | 76-76 | Ectoparasiticida spot on — uso tópico | Defend PRO Cães
+posologia | 76-76 | Ectoparasiticida spot on — uso tópico | Effipro
+posologia | 76-76 | Ectoparasiticida spot on — uso tópico | Efipet 3+
+posologia | 76-77 | Ectoparasiticida spot on — uso tópico | Frontline Topspot
+posologia | 77-77 | Ectoparasiticida spot on — uso tópico | Frontline Plus
+posologia | 77-77 | Ectoparasiticida spot on — uso tópico | NeoPET
+posologia | 77-77 | Ectoparasiticida spot on — uso tópico | Pipeta TEA Cães
+posologia | 77-77 | Ectoparasiticida spot on — uso tópico | Pipeta TEA Gatos
+posologia | 77-77 | Ectoparasiticida spray — uso tópico | Frontline Spray
+posologia | 77-77 | Endectoparasiticida — uso tópico | Advocate Cães
+posologia | 77-78 | Endectoparasiticida — uso tópico | Advocate Gatos
+posologia | 78-78 | Endectoparasiticida — uso tópico | Banni
+posologia | 78-78 | Endectoparasiticida — uso tópico | Bravecto Plus Gatos
+posologia | 78-78 | Endectoparasiticida — uso tópico | Nexgard Combo
+posologia | 78-78 | Endectoparasiticida — uso tópico | Revolution
+posologia | 78-78 | Endectoparasiticida — uso tópico | Revolution Plus
+posologia | 78-79 | Endoparasiticida — uso tópico | Banni³
+posologia | 79-79 | Endoparasiticida — uso tópico | Drontal Gatos Spot On
+posologia | 79-79 | Endoparasiticida — uso tópico | Feline Endospot
+posologia | 79-79 | Hidratante — uso tópico | Allerderm Spot-On
+posologia | 79-79 | Hidratante — uso tópico | Dermoclean Mouse
+posologia | 79-79 | Hidratante — uso tópico | Hidrapet
+posologia | 79-79 | Hidratante — uso tópico | Hidrapet Skin On
+posologia | 79-79 | Hidratante — uso tópico | Noxxi ATP
+posologia | 79-79 | Hidratante — uso tópico | Noxxi Control
+posologia | 79-80 | Hidratante — uso tópico | Noxxi Wall
+posologia | 80-80 | Hidratante — uso tópico | Oat Care Spray
+posologia | 80-80 | Hidratante — uso tópico | Oxnan Derma
+posologia | 80-80 | Hidratante — uso tópico | Pshisioderm Spot-On
+posologia | 80-80 | Hidratante — uso tópico | Revipel Pomada
+posologia | 80-80 | Hidratante — uso tópico | Ricinus
+posologia | 80-80 | Higienizador — uso tópico | Fitoclean Spray
+posologia | 80-80 | Repelente — uso tópico | Max Prata Aerossol
+posologia | 80-81 | Repelente — uso tópico | Unguento Pomada
+posologia | 81-81 | Anti-inflamatório esteroidal (aie) — uso tópico | Alergocort Shampoo
+posologia | 81-81 | Anti-inflamatório esteroidal (aie) — uso tópico | Cortishamp
+posologia | 81-81 | Antipruriginoso + dermocalmante — uso tópico | Allermyl Shampoo
+posologia | 81-81 | Antisséptico — uso tópico | Clorexsyn Shampoo
+posologia | 81-81 | Antisséptico — uso tópico | Dermogen
+posologia | 81-82 | Antisséptico — uso tópico | Hexadene Spherulites
+posologia | 82-82 | Antisséptico — uso tópico | Sept Clean
+posologia | 82-82 | Antisséptico + antifúngico — uso tópico | Cloresten
+posologia | 82-82 | Antisséptico + antifúngico — uso tópico | Micodine
+posologia | 82-82 | Antisséptico + seborreico + queratolítico — uso tópico | Peroxydex Spherulites
+posologia | 82-82 | Antisséptico + seborreico + queratolítico — uso tópico | Peroxsyn Shampoo
+posologia | 82-83 | Antisséptico + seborreico + queratolítico — uso tópico | Peroíla
+posologia | 83-83 | Antisséptico + seborreico + queratolítico — uso tópico | PET Dermyl
+posologia | 83-83 | Dermocalmante — uso tópico | Shampoo Dermocalmante
+posologia | 83-83 | Hipoalergênico — uso tópico | Hipoalersyn Shampoo
+posologia | 83-83 | Hipoalergênico — uso tópico | Shampoo Hipoalergênico
+posologia | 83-83 | Seborreico + queratolítico — uso tópico | Sebolytic
+posologia | 83-84 | Seborreico + queratolítico — uso tópico | Sebotrat
+posologia | 84-84 | Seborreico + queratolítico — uso tópico | Sebotrat S
