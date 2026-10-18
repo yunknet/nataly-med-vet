@@ -1,0 +1,10 @@
+.git
+.gitignore
+.openai
+sources
+analysis
+*.zip
+extract.py
+verify.py
+check.mjs
+inventory.txt

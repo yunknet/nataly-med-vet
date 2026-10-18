@@ -24,11 +24,24 @@ Repositório de destino informado: https://github.com/yunknet/nataly-med-vet
 
 Extraia o pacote e coloque seu conteúdo na raiz do repositório. Inclua `dist/`, `package.json`, `server.mjs`, `check.mjs`, os scripts de extração/verificação e este README. O diretório `sources/` com PDFs de entrada é local e ignorado pelo Git. Não há workflow de hospedagem ou publicação automática configurado.
 
+## Publicar no Easypanel (VPS)
+
+1. Crie um novo aplicativo no Easypanel selecionando **App**.
+2. Na aba **Fonte**:
+   - Selecione **Github** e informe o repositório `yunknet/nataly-med-vet`.
+   - Branch: `main`
+   - Caminho de Build: `/`
+   - Construção: Escolha **Dockerfile** (recomendado, usa Nginx otimizado com compressão Gzip e suporte a portas 80 e 3000).
+3. Na aba **Domínios**:
+   - Adicione seu domínio ou subdomínio (ex: `vet.seudominio.com`).
+   - Aponte a porta para `80` (ou `3000`).
+4. Clique em **Salvar** e depois em **Implantar**.
+
 ## Publicar em outra hospedagem
 
 Quando desejar hospedar, a pasta pública é `dist/`. Todas as rotas usam fragmentos; não precisam de regras de redirecionamento. Este pacote não inclui configuração de Sites nem publica automaticamente em qualquer serviço.
 
-## Instalar na VPS com Nginx
+## Instalar na VPS com Nginx direto
 
 O aplicativo é estático: em produção, o Nginx pode servir `dist/` diretamente, sem processo Node.js permanente.
 
