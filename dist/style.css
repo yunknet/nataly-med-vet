@@ -102,6 +102,18 @@ aside {
   font-weight: 600;
 }
 
+.brandlogo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.dark .brandlogo {
+  filter: drop-shadow(0 0 2px rgba(34, 197, 94, 0.45));
+}
+
 .brandmark {
   font-family: Georgia, serif;
   font-size: 38px;
