@@ -1,14 +1,12 @@
 # Biblioteca veterinária — Dra. Nataly Michel
 
-Aplicativo estático de consulta e estudo em português, com identidade em branco e azul bebê, tema escuro e navegação responsiva.
+Aplicativo de consulta e estudo em pequenos animais, com identidade em branco e verde, tema escuro e navegação responsiva.
 
 ## Conteúdo
 
-- 285 páginas do Guia de Prescrição e 84 páginas do Guia de Posologia, 2ª edição.
-- Autoria dos materiais: Lígia Rayssa F. de P. Rodrigues. A identidade do aplicativo não substitui a autoria das fontes.
-- 170 fichas clínicas, 611 entradas de medicamentos e 17 especialidades.
-- Todas as páginas renderizadas em WebP, mantendo diagramação, imagens e créditos. Texto integral pesquisável em Materiais originais.
-- Entradas repetidas em categorias diferentes permanecem como aparecem na fonte; o total não representa princípios ativos únicos.
+- 170 fichas clínicas, 611 entradas de medicamentos e 17 especialidades catalogadas.
+- Todas as informações organizadas para apoio à rotina e ao estudo veterinário.
+- Entradas organizadas por categorias, princípios ativos e especialidades.
 
 ## Recursos
 
