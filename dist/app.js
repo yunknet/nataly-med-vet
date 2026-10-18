@@ -846,7 +846,6 @@ $('#theme')?.addEventListener('click', () => {
 });
 
 $('#menu')?.addEventListener('click', openMobileMenu);
-$('#closeSidebar')?.addEventListener('click', closeMobileMenu);
 $('#sidebarBackdrop')?.addEventListener('click', closeMobileMenu);
 
 $('#help')?.addEventListener('click', () => {

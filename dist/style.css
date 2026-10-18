@@ -138,10 +138,6 @@ aside {
   font-weight: 600;
 }
 
-.mobile-close {
-  display: none;
-}
-
 .navlabel {
   font-size: 9px;
   letter-spacing: 1.5px;
@@ -1245,13 +1241,6 @@ footer a:hover {
   aside.open {
     transform: translateX(0);
     box-shadow: 10px 0 40px rgba(0, 0, 0, 0.35);
-  }
-
-  .mobile-close {
-    display: inline-flex;
-    width: 30px;
-    height: 30px;
-    font-size: 12px;
   }
 
   .shell {
