@@ -949,22 +949,592 @@ dialog::backdrop {
   margin-top: 20px;
 }
 
+/* Documento Clínico Didático & Estruturado */
 .source-text {
   font-size: 13px;
-  line-height: 1.8;
+  line-height: 1.65;
   overflow-wrap: anywhere;
 }
 
-.source-text h3 {
-  margin: 22px 0 10px;
-  color: var(--deep);
-  font-size: 15px;
+/* Barra de Navegação Rápida entre Seções (Jump Strip) */
+.doc-jump-strip {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 0 14px;
+  margin-bottom: 18px;
   border-bottom: 1px solid var(--line);
-  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  position: sticky;
+  top: 72px;
+  background: var(--panel);
+  z-index: 4;
 }
 
-.source-text p {
-  margin: 0 0 10px;
+.doc-jump-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.doc-jump-btn {
+  background: var(--soft);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 7px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.doc-jump-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--blue);
+}
+
+body.dark .doc-jump-btn {
+  background: #141414;
+  border-color: #262626;
+  color: #d1d5db;
+}
+
+body.dark .doc-jump-btn:hover {
+  background: rgba(34, 197, 94, 0.14);
+  color: #22c55e;
+  border-color: #22c55e;
+}
+
+/* Seções Clínicas */
+.doc-section {
+  margin-bottom: 24px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 130px;
+}
+
+.doc-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.doc-section-head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 14px;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--deep);
+  background: var(--blue);
+  border: 1px solid rgba(24, 101, 63, 0.2);
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+
+body.dark .section-badge {
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+/* 1. Visão Geral / Cards de Campo */
+.doc-overview-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.doc-field {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 14px 16px;
+  transition: border-color 0.15s;
+}
+
+body.dark .doc-field {
+  background: #121212;
+  border-color: #222222;
+}
+
+.doc-field .field-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--deep);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+body.dark .doc-field .field-label {
+  color: #22c55e;
+}
+
+.doc-field .field-val {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.doc-field.doc-warning {
+  border-left: 3px solid #f59e0b;
+  background: rgba(245, 158, 11, 0.06);
+}
+
+.doc-field.doc-warning .field-label {
+  color: #d97706;
+}
+
+body.dark .doc-field.doc-warning {
+  background: rgba(245, 158, 11, 0.08);
+  border-left-color: #f59e0b;
+}
+
+body.dark .doc-field.doc-warning .field-label {
+  color: #fbbf24;
+}
+
+.doc-field.doc-symptoms {
+  border-left: 3px solid var(--accent);
+}
+
+/* 2. Conduta Hospitalar */
+.hospital-subhead {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 18px 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hospital-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: grid;
+  gap: 8px;
+}
+
+.hospital-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+body.dark .hospital-checklist li {
+  background: #121212;
+  border-color: #222222;
+}
+
+.check-bullet {
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.hospital-drugs-grid {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.hospital-drug-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+body.dark .hospital-drug-card {
+  background: #121212;
+  border-color: #222222;
+  border-left-color: #22c55e;
+}
+
+.drug-bullet {
+  color: var(--accent);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.hospital-note {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 8px 0;
+}
+
+/* 3. Prescrição Domiciliar / Receituário */
+.rx-route-divider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 20px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.route-icon {
+  font-size: 16px;
+}
+
+.rx-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow);
+  transition: border-color 0.15s;
+}
+
+body.dark .rx-card {
+  background: #0d0d0d;
+  border-color: #222222;
+}
+
+.rx-card:hover {
+  border-color: var(--accent);
+}
+
+.rx-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.rx-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--deep);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+body.dark .rx-num {
+  background: #16a34a;
+}
+
+.rx-name-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.rx-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  display: block;
+}
+
+.rx-lab {
+  font-size: 11px;
+  color: var(--muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.rx-pkg {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: var(--soft);
+  color: var(--accent);
+  border: 1px solid var(--line);
+  padding: 4px 9px;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+body.dark .rx-pkg {
+  background: #171717;
+  border-color: #262626;
+  color: #22c55e;
+}
+
+.rx-directive {
+  background: var(--soft);
+  border-radius: 8px;
+  padding: 12px 14px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+body.dark .rx-directive {
+  background: #161616;
+}
+
+.dir-icon {
+  font-size: 16px;
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.dir-title {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.dir-text {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.rx-spec-row {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.55;
+  padding: 5px 0;
+  align-items: baseline;
+}
+
+.rx-spec-label {
+  color: var(--muted);
+  font-weight: 600;
+  min-width: 130px;
+  flex-shrink: 0;
+}
+
+.rx-spec-val {
+  color: var(--ink);
+  flex: 1;
+}
+
+.rx-dose-row .rx-spec-val {
+  font-weight: 700;
+  color: var(--deep);
+}
+
+body.dark .rx-dose-row .rx-spec-val {
+  color: #22c55e;
+}
+
+.rx-obs-row {
+  font-size: 11px;
+  color: var(--muted);
+  border-top: 1px dashed var(--line);
+  margin-top: 6px;
+  padding-top: 8px;
+}
+
+/* 4. Exames Solicitados */
+.doc-exams-card {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 16px;
+}
+
+body.dark .doc-exams-card {
+  background: #121212;
+  border-color: #222222;
+}
+
+.exams-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.exams-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.exam-icon {
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+/* 5. Orientações ao Tutor */
+.doc-guidelines-card {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 16px;
+}
+
+body.dark .doc-guidelines-card {
+  background: #121212;
+  border-color: #222222;
+}
+
+.guidelines-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.guideline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.guide-icon {
+  color: var(--accent);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.guideline-item.guideline-return {
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+body.dark .guideline-item.guideline-return {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.3);
+  color: #f3f4f6;
+}
+
+/* 6. Guia de Posologia (doc: posologia) */
+.med-guide-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+body.dark .med-guide-card {
+  background: #0d0d0d;
+  border-color: #222222;
+}
+
+.med-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.med-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--ink);
+}
+
+.med-lab {
+  font-size: 12px;
+  color: var(--muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.med-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.med-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+body.dark .med-badge {
+  background: #171717;
+  border-color: #242424;
+  color: #d1d5db;
+}
+
+.med-badge.active-ing {
+  border-color: rgba(34, 197, 94, 0.3);
+  color: var(--deep);
+  background: rgba(34, 197, 94, 0.1);
+}
+
+body.dark .med-badge.active-ing {
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.14);
 }
 
 .readeraside {
@@ -1409,6 +1979,37 @@ footer a:hover {
     border-top: 1px solid var(--line);
     padding-left: 0;
     padding-top: 18px;
+  }
+
+  .doc-jump-strip {
+    top: 0;
+    padding: 6px 0 10px;
+    margin-bottom: 14px;
+    position: sticky;
+    background: var(--panel);
+  }
+
+  .rx-spec-row {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .rx-spec-label {
+    min-width: unset;
+  }
+
+  .rx-card {
+    padding: 14px;
+  }
+
+  .rx-card-head {
+    align-items: flex-start;
+  }
+
+  .med-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
 
   /* Barra de Navegação Inferior (Bottom Bar) */

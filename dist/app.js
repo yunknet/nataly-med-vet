@@ -380,16 +380,311 @@ function renderResults() {
   bindCards();
 }
 
-function formatText(text) {
-  if (!text) return '';
-  return text.split('\n').map(l => {
-    const trimmed = l.trim();
-    if (!trimmed) return '';
-    if (trimmed === trimmed.toUpperCase() && /[A-ZÀ-Ú]{3}/.test(trimmed) && trimmed.length < 140) {
-      return `<h3>${esc(trimmed)}</h3>`;
+function cleanPackageDashes(line) {
+  const m = line.match(/^(\d+\.\s*)?(.*?)\s*[-–—]{4,}\s*(.*?)\.?$/);
+  if (m) {
+    const num = (m[1] || '').replace('.', '').trim();
+    let nameAndLab = m[2].trim();
+    let lab = '';
+    const labMatch = nameAndLab.match(/^(.*?)\s*\((.*?)\)$/);
+    let name = nameAndLab;
+    if (labMatch) {
+      name = labMatch[1].trim();
+      lab = labMatch[2].trim();
     }
-    return `<p>${esc(trimmed.replace(/[-–—]{4,}/g, ' — ')).replace(/^([^:]{2,48}:)/, '<strong>$1</strong>')}</p>`;
-  }).join('');
+    const pkg = m[3].trim().replace(/\.+$/, '');
+    return { isRxHeader: true, num, name, lab, pkg };
+  }
+  return null;
+}
+
+function formatPosologiaRecord(r, lines) {
+  let html = '<div class="med-guide-card">';
+  const pkgCheck = cleanPackageDashes(lines[0]);
+  let startIdx = 0;
+
+  if (pkgCheck) {
+    startIdx = 1;
+    html += `<div class="med-card-header">
+      <div class="med-title-wrap">
+        <h3 class="med-name">${esc(pkgCheck.name)}</h3>
+        ${pkgCheck.lab ? `<span class="med-lab">${esc(pkgCheck.lab)}</span>` : ''}
+      </div>
+      ${pkgCheck.pkg ? `<span class="rx-pkg">${esc(pkgCheck.pkg)}</span>` : ''}
+    </div>`;
+  }
+
+  html += '<div class="med-badges-row">';
+  if (r.active) {
+    html += `<span class="med-badge active-ing"><b>Princípio Ativo:</b> ${esc(r.active)}</span>`;
+  }
+  if (r.species) {
+    html += `<span class="med-badge species-badge">🐾 ${esc(r.species)}</span>`;
+  }
+  if (r.route) {
+    html += `<span class="med-badge route-badge">💉 Via ${esc(r.route)}</span>`;
+  }
+  html += '</div>';
+
+  html += '<div class="med-details-list">';
+  for (let i = startIdx; i < lines.length; i++) {
+    const l = lines[i];
+    if (/^Administrar\s/i.test(l)) {
+      html += `<div class="rx-directive"><span class="dir-icon">⏱</span><div><small class="dir-title">Posologia recomendada:</small><p class="dir-text">${esc(l)}</p></div></div>`;
+      continue;
+    }
+
+    const fm = l.match(/^([^:]{2,30}):\s*(.*)$/);
+    if (fm) {
+      const k = fm[1].trim();
+      const v = fm[2].trim();
+      const isWarning = /contra|adverso|incompat/i.test(k);
+      const isDose = /dose/i.test(k);
+      const isObs = /obs/i.test(k);
+
+      if (isWarning) {
+        html += `<div class="doc-field doc-warning">
+          <div class="field-label">⚠️ <b>${esc(k)}</b></div>
+          <p class="field-val">${esc(v)}</p>
+        </div>`;
+      } else {
+        html += `<div class="rx-spec-row ${isDose ? 'rx-dose-row' : ''} ${isObs ? 'rx-obs-row' : ''}">
+          <span class="rx-spec-label">${esc(k)}:</span>
+          <span class="rx-spec-val">${esc(v)}</span>
+        </div>`;
+      }
+    } else {
+      html += `<p class="field-val">${esc(l)}</p>`;
+    }
+  }
+  html += '</div></div>';
+  return html;
+}
+
+function formatClinicaRecord(r, lines) {
+  let html = '';
+  const sections = [];
+  let currentSec = null;
+
+  for (let i = 0; i < lines.length; i++) {
+    const l = lines[i];
+    const up = l.toUpperCase();
+
+    if (up === 'VISÃO GERAL' || up.startsWith('VISÃO GERAL')) {
+      if (currentSec && currentSec.type !== 'overview') sections.push(currentSec);
+      if (!currentSec || currentSec.type !== 'overview') {
+        currentSec = { id: 'sec-overview', type: 'overview', title: 'Visão Geral', badge: '📋 Visão Geral', lines: [] };
+      }
+    } else if (up.includes('PRESCRIÇÃO HOSPITALAR') || up.includes('CONDUTA HOSPITALAR')) {
+      if (currentSec && currentSec.type !== 'hospital') {
+        sections.push(currentSec);
+        currentSec = { id: 'sec-hospital', type: 'hospital', title: 'Hospitalar', badge: '🏥 Conduta Hospitalar', lines: [] };
+      }
+      currentSec.lines.push(l);
+    } else if (up.includes('PRESCRIÇÃO DOMICILIAR')) {
+      if (currentSec && currentSec.type !== 'domiciliar') {
+        sections.push(currentSec);
+        currentSec = { id: 'sec-domiciliar', type: 'domiciliar', title: 'Prescrição', badge: '💊 Prescrição Domiciliar', lines: [] };
+      }
+    } else if (up.startsWith('SOLICITAÇÕES') || up.startsWith('SOLICITAÇÕES:')) {
+      if (currentSec && currentSec.type !== 'solicitacoes') {
+        sections.push(currentSec);
+        currentSec = { id: 'sec-exames', type: 'solicitacoes', title: 'Exames', badge: '🔬 Exames Solicitados', lines: [] };
+      }
+    } else if (up.startsWith('RECOMENDAÇÕES') || up.startsWith('RECOMENDAÇÕES:')) {
+      if (currentSec && currentSec.type !== 'recomendacoes') {
+        sections.push(currentSec);
+        currentSec = { id: 'sec-recomendacoes', type: 'recomendacoes', title: 'Orientações', badge: '🛡️ Orientações ao Tutor', lines: [] };
+      }
+    } else {
+      if (!currentSec) {
+        currentSec = { id: 'sec-overview', type: 'overview', title: 'Visão Geral', badge: '📋 Visão Geral', lines: [] };
+      }
+      currentSec.lines.push(l);
+    }
+  }
+  if (currentSec) sections.push(currentSec);
+
+  // Jump Strip para navegação rápida
+  if (sections.length > 1) {
+    html += '<nav class="doc-jump-strip" aria-label="Navegação rápida">';
+    sections.forEach(s => {
+      html += `<button type="button" class="doc-jump-btn" data-target="${s.id}">${s.badge}</button>`;
+    });
+    html += '</nav>';
+  }
+
+  // Renderização das seções didáticas
+  sections.forEach(s => {
+    html += `<section class="doc-section section-${s.type}" id="${s.id}">`;
+    html += `<div class="doc-section-head"><h3 class="section-title"><span class="section-badge">${s.badge}</span></h3></div>`;
+
+    if (s.type === 'overview') {
+      html += '<div class="doc-overview-grid">';
+      s.lines.forEach(l => {
+        const fm = l.match(/^([^:]{2,30}):\s*(.*)$/);
+        if (fm) {
+          const k = fm[1].trim();
+          const v = fm[2].trim();
+          const isWarning = /complicaç/i.test(k);
+          const isSymptoms = /sinais/i.test(k);
+          const isContext = /contexto/i.test(k);
+          const cls = isWarning ? 'doc-field doc-warning' : (isSymptoms ? 'doc-field doc-symptoms' : (isContext ? 'doc-field doc-context' : 'doc-field'));
+          const icon = isWarning ? '⚠️ ' : (isSymptoms ? '🩺 ' : (isContext ? '🔍 ' : '📌 '));
+          html += `<div class="${cls}">
+            <div class="field-label">${icon}<b>${esc(k)}</b></div>
+            <p class="field-val">${esc(v)}</p>
+          </div>`;
+        } else {
+          html += `<p class="field-val">${esc(l)}</p>`;
+        }
+      });
+      html += '</div>';
+    } else if (s.type === 'hospital') {
+      html += '<div class="doc-hospital-body">';
+      let inProcedures = false;
+      let inDrugs = false;
+
+      s.lines.forEach(l => {
+        if (/procedimentos\s*e\s*manejo/i.test(l)) {
+          if (inProcedures) html += '</ul>';
+          html += '<h4 class="hospital-subhead">📋 Procedimentos & Manejo Imediato</h4><ul class="hospital-checklist">';
+          inProcedures = true;
+          inDrugs = false;
+        } else if (/medicamentos/i.test(l)) {
+          if (inProcedures) { html += '</ul>'; inProcedures = false; }
+          html += '<h4 class="hospital-subhead">💉 Medicamentos de Internação & Emergência</h4><div class="hospital-drugs-grid">';
+          inDrugs = true;
+        } else if (l.startsWith('-') || l.startsWith('•')) {
+          const cleanItem = l.replace(/^[-•*]\s*/, '').trim();
+          if (inDrugs) {
+            html += `<div class="hospital-drug-card"><span class="drug-bullet">✚</span><span class="drug-text">${esc(cleanItem)}</span></div>`;
+          } else {
+            html += `<li><span class="check-bullet">✓</span><span>${esc(cleanItem)}</span></li>`;
+          }
+        } else {
+          html += `<p class="hospital-note">${esc(l)}</p>`;
+        }
+      });
+      if (inProcedures) html += '</ul>';
+      if (inDrugs) html += '</div>';
+      html += '</div>';
+    } else if (s.type === 'domiciliar') {
+      html += '<div class="doc-domiciliar-body">';
+      let i = 0;
+      while (i < s.lines.length) {
+        const l = s.lines[i];
+        if (/^Uso\s/i.test(l)) {
+          html += `<div class="rx-route-divider"><span class="route-icon">💊</span><b>${esc(l)}</b></div>`;
+          i++;
+          continue;
+        }
+
+        const pkgCheck = cleanPackageDashes(l);
+        if (pkgCheck) {
+          html += '<div class="rx-card">';
+          html += `<div class="rx-card-head">
+            ${pkgCheck.num ? `<span class="rx-num">${esc(pkgCheck.num)}</span>` : ''}
+            <div class="rx-name-wrap">
+              <strong class="rx-name">${esc(pkgCheck.name)}</strong>
+              ${pkgCheck.lab ? `<span class="rx-lab">${esc(pkgCheck.lab)}</span>` : ''}
+            </div>
+            ${pkgCheck.pkg ? `<span class="rx-pkg">${esc(pkgCheck.pkg)}</span>` : ''}
+          </div>`;
+
+          i++;
+          while (i < s.lines.length) {
+            const nextLine = s.lines[i];
+            if (cleanPackageDashes(nextLine) || /^Uso\s/i.test(nextLine)) {
+              break;
+            }
+            if (/^Administrar\s/i.test(nextLine)) {
+              html += `<div class="rx-directive"><span class="dir-icon">⏱</span><div><small class="dir-title">Posologia recomendada:</small><p class="dir-text">${esc(nextLine)}</p></div></div>`;
+            } else {
+              const fm = nextLine.match(/^([^:]{2,30}):\s*(.*)$/);
+              if (fm) {
+                const k = fm[1].trim();
+                const v = fm[2].trim();
+                const isDose = /dose/i.test(k);
+                const isObs = /obs/i.test(k);
+                html += `<div class="rx-spec-row ${isDose ? 'rx-dose-row' : ''} ${isObs ? 'rx-obs-row' : ''}">
+                  <span class="rx-spec-label">${esc(k)}:</span>
+                  <span class="rx-spec-val">${esc(v)}</span>
+                </div>`;
+              } else {
+                html += `<div class="rx-spec-row"><span class="rx-spec-val">${esc(nextLine)}</span></div>`;
+              }
+            }
+            i++;
+          }
+          html += '</div>';
+          continue;
+        } else {
+          html += `<p class="rx-extra">${esc(l)}</p>`;
+          i++;
+        }
+      }
+      html += '</div>';
+    } else if (s.type === 'solicitacoes') {
+      html += '<div class="doc-exams-card"><ul class="exams-list">';
+      s.lines.forEach(l => {
+        const item = l.replace(/^[-•*]\s*/, '').trim();
+        html += `<li><span class="exam-icon">🧪</span><span>${esc(item)}</span></li>`;
+      });
+      html += '</ul></div>';
+    } else if (s.type === 'recomendacoes') {
+      html += '<div class="doc-guidelines-card"><ul class="guidelines-list">';
+      s.lines.forEach(l => {
+        const item = l.replace(/^[-•*]\s*/, '').trim();
+        const isReturn = /retorn/i.test(item);
+        const icon = isReturn ? '📅' : '✓';
+        const cls = isReturn ? 'guideline-item guideline-return' : 'guideline-item';
+        html += `<li class="${cls}"><span class="guide-icon">${icon}</span><span>${esc(item)}</span></li>`;
+      });
+      html += '</ul></div>';
+    }
+
+    html += '</section>';
+  });
+
+  return html;
+}
+
+function formatClinicalDoc(r) {
+  if (!r?.text) return '';
+
+  // 1. Unwrapping de quebras de linha indevidas
+  const rawLines = r.text.split('\n').map(l => l.trim()).filter(Boolean);
+  const lines = [];
+
+  for (let i = 0; i < rawLines.length; i++) {
+    const line = rawLines[i];
+    if (lines.length > 0) {
+      const prev = lines[lines.length - 1];
+      const isHeader = line === line.toUpperCase() && /[A-ZÀ-Ú]{3}/.test(line) && line.length < 100;
+      const isList = /^([-•*]|\d+\.)\s/.test(line);
+      const isField = /^([^:]{2,35}:)/.test(line);
+      const prevEndsSentence = /[.:;!?]$/.test(prev);
+      const prevIsHeader = prev === prev.toUpperCase() && /[A-ZÀ-Ú]{3}/.test(prev);
+
+      if (!isHeader && !isList && !isField && !prevEndsSentence && !prevIsHeader) {
+        lines[lines.length - 1] = prev + ' ' + line;
+        continue;
+      }
+    }
+    lines.push(line);
+  }
+
+  // Remove título redundante do topo
+  if (lines.length > 0 && lines[0].toLowerCase() === r.title.toLowerCase()) {
+    lines.shift();
+  }
+
+  if (r.doc === 'posologia') {
+    return formatPosologiaRecord(r, lines);
+  }
+
+  return formatClinicaRecord(r, lines);
 }
 
 function openRecord(id) {
@@ -417,13 +712,9 @@ function openRecord(id) {
         <button type="button" class="btn secondary" id="markDone">${isDone ? '✓ Marcado como revisado' : 'Marcar como revisado'}</button>
       </div>
 
-      <div class="notice">
-        Guia prático para suporte à tomada de decisão clínica. Doses, vias e frequências devem ser ajustadas conforme o quadro individual de cada paciente.
-      </div>
-
       <div class="readergrid">
         <article class="source-text">
-          ${formatText(r.text)}
+          ${formatClinicalDoc(r)}
         </article>
 
         <aside class="readeraside">
@@ -461,6 +752,17 @@ function openRecord(id) {
       </div>
     </div>
   `;
+
+  // Rolagem suave com os botões da barra rápida de seções
+  document.querySelectorAll('.doc-jump-btn').forEach(btn => {
+    btn.onclick = () => {
+      const targetId = btn.dataset.target;
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+  });
 
   $('#closeReader').onclick = () => $('#reader').close();
   $('#recordFav').onclick = () => {
