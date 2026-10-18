@@ -26,8 +26,6 @@ let favs = read('favorites', []);
 let done = read('done', []);
 let notes = read('notes', {});
 let recent = read('recent', []);
-let flow = 0;
-let flowChecks = read('flowchecks', {});
 let currentRecord = null;
 
 if (read('dark', false)) {
@@ -38,7 +36,6 @@ const titles = {
   inicio: 'Visão geral',
   biblioteca: 'Biblioteca clínica',
   medicamentos: 'Guia de medicamentos',
-  fluxo: 'Roteiro de conduta',
   estudos: 'Caderno clínico',
   favoritos: 'Favoritos',
   sobre: 'Sobre o sistema'
@@ -76,11 +73,13 @@ function searchBox(placeholder = 'Busque por diagnóstico, medicamento ou princ�
 function closeMobileMenu() {
   $('#sidebar')?.classList.remove('open');
   $('#sidebarBackdrop')?.classList.remove('open');
+  document.body.classList.remove('menu-open');
 }
 
 function openMobileMenu() {
   $('#sidebar')?.classList.add('open');
   $('#sidebarBackdrop')?.classList.add('open');
+  document.body.classList.add('menu-open');
 }
 
 function groups(doc = 'clinica') {
@@ -169,43 +168,21 @@ function home() {
 
   ${searchBox('Busque por diagnóstico, medicamento ou princípio ativo…')}
 
-  <div class="homegrid">
-    <section>
-      <div class="sectionhead">
-        <div>
-          <h2>Especialidades de rotina</h2>
-          <p>Selecione uma especialidade para filtrar as condutas clínicas.</p>
-        </div>
-        <a class="textlink" href="#biblioteca">Ver todas ↗</a>
-      </div>
-      <div class="specialties">
-        ${['Cardiologia', 'Dermatologia', 'Gastroenterologia', 'Nefrologia', 'Infectologia', 'Pneumologia'].filter(g => gs.includes(g)).map((g, i) => `
-          <button type="button" class="specialty" data-group="${g}">
-            <span class="glyph">${['♡', '◌', '≋', '◒', '✧', '♧'][i]}</span>
-            <b>${g}</b>
-            <small>${clinical.filter(r => r.group === g).length} condutas <span>↗</span></small>
-          </button>
-        `).join('')}
-      </div>
-    </section>
-
-    <section>
-      <div class="sectionhead">
-        <h2>Roteiro de conduta</h2>
-      </div>
-      <div class="guidebox">
-        <div class="eyebrow">PASSO A PASSO NO ATENDIMENTO</div>
-        <h3>Da queixa à prescrição.</h3>
-        <p class="muted">Um roteiro rápido para sistematizar o atendimento, conferir hipóteses e validar doses com segurança no plantão.</p>
-        <div class="stepsmini">
-          <div><i>1</i>Queixa & Hipóteses</div>
-          <div><i>2</i>Conduta & Exames</div>
-          <div><i>3</i>Prescrição & Doses</div>
-          <div><i>4</i>Orientações ao Tutor</div>
-        </div>
-        <a class="btn secondary" href="#fluxo">Abrir roteiro →</a>
-      </div>
-    </section>
+  <div class="sectionhead">
+    <div>
+      <h2>Especialidades Clínicas</h2>
+      <p>Acesse diretamente os protocolos clínicos de cada especialidade.</p>
+    </div>
+    <a class="textlink" href="#biblioteca">Ver todas as fichas ↗</a>
+  </div>
+  <div class="specialties">
+    ${gs.map((g, i) => `
+      <button type="button" class="specialty" data-group="${g}">
+        <span class="glyph">${['♡', '◌', '≋', '◒', '✧', '♧', '✚', '⌘', '◈', '◷', '▤', '✦', '❋', '✿', '★', '✪', '❂'][i % 17]}</span>
+        <b>${g}</b>
+        <small>${clinical.filter(r => r.group === g).length} condutas <span>↗</span></small>
+      </button>
+    `).join('')}
   </div>
 
   <div class="sectionhead">
@@ -507,84 +484,6 @@ function openRecord(id) {
   }
 }
 
-const flowLabels = ['Queixa & Hipóteses', 'Conduta & Exames', 'Prescrição & Doses', 'Orientações & Alta'];
-const checks = [
-  ['Identifiquei a espécie, idade e queixa principal do paciente.', 'Delimitei as hipóteses diagnósticas e diagnósticos diferenciais.'],
-  ['Avaliei as orientações de exames complementares recomendados.', 'Consultei o protocolo hospitalar e as medidas imediatas.'],
-  ['Conferi dose em mg/kg, via e frequência de administração.', 'Verifiquei contraindicações e interações medicamentosas.'],
-  ['Defini a prescrição domiciliar e orientações ao tutor.', 'Registrei as observações clínicas no caderno de plantão.']
-];
-
-function flowView() {
-  return head('ROTEIRO DE CONDUTA', 'Sistematização do atendimento clínico.', 'Um roteiro objetivo para conduzir o caso clínico com segurança, da queixa inicial à prescrição de alta.') +
-  `<div class="flowlayout">
-    <div class="flowsteps">
-      ${flowLabels.map((t, i) => `
-        <button type="button" class="${flow === i ? 'active' : ''}" data-step="${i}">
-          <span>0${i + 1}</span> <b>${t}</b>
-        </button>
-      `).join('')}
-    </div>
-
-    <div class="flowpanel">
-      <div class="eyebrow">ETAPA ${flow + 1} DE 4</div>
-      <h2>${[
-        'Qual é a queixa principal ou hipótese?',
-        'Consulte a conduta clínica e exames necessários.',
-        'Valide posologia, vias e apresentações comerciais.',
-        'Prescrição domiciliar e orientações ao tutor.'
-      ][flow]}</h2>
-      <p>${[
-        'Selecione uma especialidade para filtrar e agilizar o acesso às fichas relacionadas ao caso.',
-        'Verifique exames complementares solicitados e condutas hospitalares imediatas na ficha da doença.',
-        'Confira as opções terapêuticas no Guia de Medicamentos com doses exatas em mg/kg para a espécie.',
-        'Finalize as recomendações domiciliares ao tutor e registre observações no seu Caderno Clínico.'
-      ][flow]}</p>
-
-      ${flow === 0 ? `
-        <div class="field">
-          <label for="flowgroup">Selecione a especialidade do caso:</label>
-          ${select('flowgroup', 'Escolha uma especialidade', groups('clinica'), read('flowgroup', ''))}
-        </div>
-      ` : ''}
-
-      ${flow === 1 ? `
-        <div class="flow-actions">
-          <a class="btn" href="#biblioteca">Acessar biblioteca clínica ↗</a>
-          <a class="btn secondary" href="#medicamentos">Consultar medicamentos ↗</a>
-        </div>
-      ` : ''}
-
-      ${flow === 2 ? `
-        <div class="flow-actions">
-          <a class="btn" href="#medicamentos">Checar doses e vias ↗</a>
-          <a class="btn secondary" href="#biblioteca">Checar conduta clínica ↗</a>
-        </div>
-      ` : ''}
-
-      ${flow === 3 ? `
-        <div class="flow-actions">
-          <a class="btn" href="#estudos">Abrir caderno clínico ↗</a>
-        </div>
-      ` : ''}
-
-      <div class="checklist">
-        <div class="eyebrow" style="margin-bottom: 12px;">PONTOS DE CONFERÊNCIA CLÍNICA</div>
-        ${checks[flow].map((t, i) => `
-          <label class="check-item">
-            <input type="checkbox" data-check="${flow}-${i}" ${flowChecks[flow + '-' + i] ? 'checked' : ''}>
-            <span>${t}</span>
-          </label>
-        `).join('')}
-      </div>
-
-      <div class="flowbottom">
-        <button type="button" class="btn secondary" id="flowprev" ${flow === 0 ? 'disabled' : ''}>← Voltar</button>
-        <button type="button" class="btn" id="flownext">${flow === 3 ? 'Concluir roteiro ✓' : 'Próxima etapa →'}</button>
-      </div>
-    </div>
-  </div>`;
-}
 
 function study() {
   const pct = Math.round((done.length / data.records.length) * 100);
@@ -748,8 +647,6 @@ function render() {
     main.innerHTML = home();
   } else if (['biblioteca', 'medicamentos', 'favoritos'].includes(view)) {
     main.innerHTML = library();
-  } else if (view === 'fluxo') {
-    main.innerHTML = flowView();
   } else if (view === 'estudos') {
     main.innerHTML = study();
   } else {
@@ -784,43 +681,6 @@ function render() {
     });
   }
 
-  if (view === 'fluxo') {
-    document.querySelectorAll('[data-step]').forEach(btn => {
-      btn.onclick = () => {
-        flow = +btn.dataset.step;
-        render();
-      };
-    });
-
-    document.querySelectorAll('[data-check]').forEach(chk => {
-      chk.onchange = () => {
-        flowChecks[chk.dataset.check] = chk.checked;
-        write('flowchecks', flowChecks);
-      };
-    });
-
-    $('#flowgroup')?.addEventListener('change', e => {
-      write('flowgroup', e.target.value);
-    });
-
-    $('#flowprev')?.addEventListener('click', () => {
-      if (flow > 0) {
-        flow--;
-        render();
-      }
-    });
-
-    $('#flownext')?.addEventListener('click', () => {
-      if (flow < 3) {
-        flow++;
-        render();
-      } else {
-        toast('Roteiro concluído! Acesse "Caderno Clínico" para conferir suas anotações.');
-        go('estudos');
-      }
-    });
-  }
-
   if (view === 'estudos') {
     $('#export')?.addEventListener('click', () => {
       const activeNotes = Object.entries(notes).filter(([, v]) => v && v.trim());
@@ -845,8 +705,48 @@ $('#theme')?.addEventListener('click', () => {
   write('dark', document.body.classList.contains('dark'));
 });
 
-$('#menu')?.addEventListener('click', openMobileMenu);
-$('#sidebarBackdrop')?.addEventListener('click', closeMobileMenu);
+// Abertura do menu mobile
+$('#menu')?.addEventListener('click', e => {
+  e.stopPropagation();
+  openMobileMenu();
+});
+
+// Fechamento pelo botão X do menu
+$('#closeSidebar')?.addEventListener('click', e => {
+  e.stopPropagation();
+  closeMobileMenu();
+});
+
+// Fechamento ao tocar no backdrop
+['click', 'pointerdown'].forEach(evt => {
+  $('#sidebarBackdrop')?.addEventListener(evt, e => {
+    e.preventDefault();
+    closeMobileMenu();
+  });
+});
+
+// Fechamento automático ao clicar em QUALQUER link dentro do sidebar
+$('#sidebar')?.addEventListener('click', e => {
+  if (e.target.closest('a')) {
+    closeMobileMenu();
+  }
+});
+
+// Gesto de swipe para fechar o menu no celular
+let touchStartX = 0;
+let touchStartY = 0;
+$('#sidebar')?.addEventListener('touchstart', e => {
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+$('#sidebar')?.addEventListener('touchmove', e => {
+  const diffX = touchStartX - e.touches[0].clientX;
+  const diffY = Math.abs(touchStartY - e.touches[0].clientY);
+  if (diffX > 45 && diffX > diffY) {
+    closeMobileMenu();
+  }
+}, { passive: true });
 
 $('#help')?.addEventListener('click', () => {
   go('sobre');

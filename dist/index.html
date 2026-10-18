@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2.3">
 </head>
 <body>
   <!-- Overlay backdrop para fechar o menu no mobile ao clicar fora -->
@@ -23,13 +23,13 @@
         <img src="assets/logo.png" class="brandlogo" alt="Logo Dra. Nataly Michel">
         <span class="brandname">Dra. Nataly Michel<small>MEDICINA VETERINÁRIA</small></span>
       </a>
+      <button type="button" class="sidebar-close" id="closeSidebar" aria-label="Fechar menu">✕</button>
     </div>
     <div class="navlabel">ROTINA DE ATENDIMENTO</div>
     <nav>
       <a href="#inicio" data-nav="inicio"><span class="navicon">⌂</span> <span>Visão geral</span></a>
       <a href="#biblioteca" data-nav="biblioteca"><span class="navicon">▤</span> <span>Biblioteca clínica</span></a>
       <a href="#medicamentos" data-nav="medicamentos"><span class="navicon">✚</span> <span>Guia de medicamentos</span></a>
-      <a href="#fluxo" data-nav="fluxo"><span class="navicon">⌘</span> <span>Roteiro de conduta</span></a>
       <a href="#estudos" data-nav="estudos"><span class="navicon">✎</span> <span>Caderno clínico</span></a>
       <a href="#favoritos" data-nav="favoritos"><span class="navicon">♡</span> <span>Favoritos</span></a>
     </nav>
@@ -56,8 +56,32 @@
     </footer>
   </div>
 
+  <!-- Barra de navegação inferior exclusiva para celular -->
+  <nav class="bottom-nav" aria-label="Navegação rápida mobile">
+    <a href="#inicio" data-nav="inicio">
+      <span class="b-icon">⌂</span>
+      <span class="b-label">Início</span>
+    </a>
+    <a href="#biblioteca" data-nav="biblioteca">
+      <span class="b-icon">▤</span>
+      <span class="b-label">Condutas</span>
+    </a>
+    <a href="#medicamentos" data-nav="medicamentos">
+      <span class="b-icon">✚</span>
+      <span class="b-label">Fórmulas</span>
+    </a>
+    <a href="#estudos" data-nav="estudos">
+      <span class="b-icon">✎</span>
+      <span class="b-label">Caderno</span>
+    </a>
+    <a href="#favoritos" data-nav="favoritos">
+      <span class="b-icon">♡</span>
+      <span class="b-label">Favoritos</span>
+    </a>
+  </nav>
+
   <dialog id="reader"><div id="readerContent"></div></dialog>
   <div id="toast" role="status"></div>
-  <script src="app.js"></script>
+  <script src="app.js?v=2.3"></script>
 </body>
 </html>
