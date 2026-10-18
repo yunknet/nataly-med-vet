@@ -32,12 +32,26 @@ body.dark {
   box-sizing: border-box;
 }
 
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
   background: var(--bg);
   color: var(--ink);
   font: 14px/1.6 'DM Sans', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  touch-action: manipulation;
+}
+
+body.menu-open,
+body.reader-open {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+  height: 100% !important;
+  touch-action: none;
 }
 
 button, input, select, textarea {
@@ -1917,99 +1931,217 @@ footer a:hover {
   }
 
   /* Modal de Leitura / Conduta Fullscreen Mobile */
-  dialog {
-    width: 100vw;
-    height: 100dvh;
-    max-height: 100dvh;
-    border-radius: 0;
-    border: none;
-    margin: 0;
-    display: none;
+  dialog,
+  dialog#reader {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: 100% !important;
+    max-height: 100dvh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    z-index: 9999 !important;
   }
 
-  dialog[open] {
-    display: flex;
-    flex-direction: column;
+  dialog[open],
+  dialog#reader[open] {
+    display: flex !important;
+    flex-direction: column !important;
   }
 
   #readerContent {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow: hidden;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: 100% !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
   }
 
   .readerhead {
-    padding: 14px 16px;
-    gap: 10px;
-    flex-shrink: 0;
+    padding: 12px 14px !important;
+    gap: 10px !important;
+    flex-shrink: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+    border-bottom: 1px solid var(--line) !important;
+    background: var(--panel) !important;
   }
 
   .readerhead h2 {
-    font-size: 16px;
-    line-height: 1.3;
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+    margin: 2px 0 0 !important;
   }
 
   .readerbody {
-    padding: 16px 14px 40px;
-    flex: 1;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    padding: 14px 12px 48px !important;
+    flex: 1 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    box-sizing: border-box !important;
   }
 
   .readertools {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 14px !important;
   }
 
   .readertools .btn {
-    width: 100%;
-    height: 42px;
-    font-size: 12px;
-  }
-
-  .readergrid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .readeraside {
-    border-left: none;
-    border-top: 1px solid var(--line);
-    padding-left: 0;
-    padding-top: 18px;
+    width: 100% !important;
+    height: 42px !important;
+    font-size: 12px !important;
+    box-sizing: border-box !important;
   }
 
   .doc-jump-strip {
-    top: 0;
-    padding: 6px 0 10px;
-    margin-bottom: 14px;
-    position: sticky;
-    background: var(--panel);
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 4px 0 10px !important;
+    margin-bottom: 14px !important;
+    position: sticky !important;
+    background: var(--panel) !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    box-sizing: border-box !important;
+    scrollbar-width: none !important;
   }
 
-  .rx-spec-row {
-    flex-direction: column;
-    gap: 2px;
+  .doc-jump-strip::-webkit-scrollbar {
+    display: none !important;
   }
 
-  .rx-spec-label {
-    min-width: unset;
+  .doc-jump-btn {
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .readergrid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    gap: 16px !important;
+    margin-top: 0 !important;
+  }
+
+  .source-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .doc-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .doc-overview-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    gap: 8px !important;
+  }
+
+  .doc-field {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+    padding: 12px !important;
+  }
+
+  .doc-field .field-val,
+  .dir-text,
+  .rx-spec-val,
+  .field-val {
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
   }
 
   .rx-card {
-    padding: 14px;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+    padding: 14px 12px !important;
   }
 
   .rx-card-head {
-    align-items: flex-start;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    align-items: flex-start !important;
+  }
+
+  .rx-name-wrap {
+    min-width: 0 !important;
+    flex: 1 !important;
+  }
+
+  .rx-name {
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .rx-directive {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .rx-spec-row {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+  }
+
+  .rx-spec-label {
+    min-width: unset !important;
+  }
+
+  .readeraside {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    border-left: none !important;
+    border-top: 1px solid var(--line) !important;
+    padding-left: 0 !important;
+    padding-top: 16px !important;
   }
 
   .med-card-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
   }
 
   /* Barra de Navegação Inferior (Bottom Bar) */

@@ -764,7 +764,10 @@ function openRecord(id) {
     };
   });
 
-  $('#closeReader').onclick = () => $('#reader').close();
+  $('#closeReader').onclick = () => {
+    document.body.classList.remove('reader-open');
+    $('#reader').close();
+  };
   $('#recordFav').onclick = () => {
     favs = favs.includes(id) ? favs.filter(x => x !== id) : [...favs, id];
     write('favorites', favs);
@@ -781,6 +784,7 @@ function openRecord(id) {
   };
 
   if (!$('#reader').open) {
+    document.body.classList.add('reader-open');
     $('#reader').showModal();
     $('#reader').scrollTop = 0;
   }
@@ -1058,9 +1062,18 @@ $('#reader')?.addEventListener('click', e => {
   if (e.target === $('#reader')) {
     const r = e.target.getBoundingClientRect();
     if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) {
+      document.body.classList.remove('reader-open');
       e.target.close();
     }
   }
+});
+
+$('#reader')?.addEventListener('close', () => {
+  document.body.classList.remove('reader-open');
+});
+
+$('#reader')?.addEventListener('cancel', () => {
+  document.body.classList.remove('reader-open');
 });
 
 window.addEventListener('hashchange', () => {
