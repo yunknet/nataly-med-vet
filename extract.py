@@ -8,10 +8,10 @@ sources=[('clinica','Guia de prescrição', 'ebook_b77c59da-cc26-45a6-885d-5d8d3
 data={'documents':[],'pages':[],'records':[]}
 specialties=['ALERGOLOGIA','CARDIOLOGIA','DERMATOLOGIA','ENDOCRINOLOGIA E METABOLOGIA','GASTROENTEROLOGIA','GINECOLOGIA E OBSTETRÍCIA','HEMATOLOGIA','HEPATOLOGIA E PANCREATOPATIAS','INFECTOLOGIA','NEFROLOGIA','NEUROLOGIA','ODONTOLOGIA','OFTALMOLOGIA','ORTOPEDIA','PNEUMOLOGIA','TOXICOLOGIA','UROLOGIA']
 for docid,title,filename in sources:
-    src=Path(r'C:\Users\netso\Downloads')/filename
+    src=root/'sources'/f'{docid}.pdf'
+    if not src.exists(): raise FileNotFoundError(f'Coloque o PDF original em {src}')
     d=pdf.PdfDocument(src); data['documents'].append({'id':docid,'title':title,'count':len(d),'author':'Lígia Rayssa F. de P. Rodrigues','edition':'2ª edição'})
     (root/'sources').mkdir(exist_ok=True)
-    if not (root/'sources'/f'{docid}.pdf').exists(): shutil.copy2(src,root/'sources'/f'{docid}.pdf')
     lines=[]
     for i,p in enumerate(d):
         text=p.get_textpage().get_text_range().replace('\r','')
@@ -60,6 +60,7 @@ for r in data['records']:
     r['summary']=desc.group(1) if desc else (r['active'] or r['group'])
     r['sections']=[s for s in ['PRESCRIÇÃO HOSPITALAR','PRESCRIÇÃO DOMICILIAR','Solicitações:','Recomendações:','Contra-Indicações:','Efeitos Adversos:','Incompatibilidade:'] if s in t]
 (out/'data.json').write_text(json.dumps(data,ensure_ascii=False),encoding='utf-8')
-Image.open(r'C:\Users\netso\AppData\Local\Temp\codex-clipboard-3c6936bb-7d24-400b-b353-fafa45eaacc7.jpg').save(out/'assets/nataly.webp','WEBP',quality=90)
+if not (out/'assets/nataly.webp').exists():
+    Image.open(root/'sources/nataly.jpg').save(out/'assets/nataly.webp','WEBP',quality=90)
 (root/'inventory.txt').write_text('\n'.join(f'{r["doc"]} | {r["page"]}-{r["end"]} | {r["group"]} | {r["title"]}' for r in data['records']),encoding='utf-8')
 print(json.dumps({'pages':len(data['pages']),'records':len(data['records']),'clinical':sum(r['doc']=='clinica' for r in data['records'])}))

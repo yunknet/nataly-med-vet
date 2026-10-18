@@ -2,3 +2,5 @@ sources/
 *.tar.gz
 *.zip
 __pycache__/
+.openai/
+node_modules/

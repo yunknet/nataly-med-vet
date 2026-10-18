@@ -16,15 +16,61 @@ Busca sem distinção de acentos; filtros de especialidade/categoria, espécie, 
 
 ## Executar
 
-Sirva `dist/` por HTTP, por exemplo `python -m http.server 8766 --directory dist`. Não há dependências de compilação. O código usa JavaScript, HTML e CSS. Não abra o HTML diretamente por `file://`, pois o acervo é carregado por fetch.
+Com Node.js 18 ou superior, execute `npm start` e abra `http://127.0.0.1:3000`. Não é necessário instalar pacotes. Execute `npm run check` para verificar o JavaScript e o acervo. Alternativamente, sirva `dist/` com `python -m http.server 8766 --directory dist`. Não abra o HTML diretamente por `file://`, pois o acervo é carregado por fetch.
+
+## Enviar ao GitHub
+
+Repositório de destino informado: https://github.com/yunknet/nataly-med-vet
+
+Extraia o pacote e coloque seu conteúdo na raiz do repositório. Inclua `dist/`, `package.json`, `server.mjs`, `check.mjs`, os scripts de extração/verificação e este README. O diretório `sources/` com PDFs de entrada é local e ignorado pelo Git. Não há workflow de hospedagem ou publicação automática configurado.
 
 ## Publicar em outra hospedagem
 
-Publique o conteúdo de `dist/` em hospedagem estática HTTPS. Todas as rotas usam fragmentos; não precisam de regras de redirecionamento. O manifesto `.openai/hosting.json` identifica o Site existente; não crie outro projeto ao atualizar.
+Quando desejar hospedar, a pasta pública é `dist/`. Todas as rotas usam fragmentos; não precisam de regras de redirecionamento. Este pacote não inclui configuração de Sites nem publica automaticamente em qualquer serviço.
+
+## Instalar na VPS com Nginx
+
+O aplicativo é estático: em produção, o Nginx pode servir `dist/` diretamente, sem processo Node.js permanente.
+
+1. Clone o repositório na VPS:
+
+```bash
+sudo mkdir -p /var/www
+sudo git clone https://github.com/yunknet/nataly-med-vet.git /var/www/nataly-med-vet
+```
+
+2. Configure um site no Nginx, substituindo `vet.seudominio.com` pelo domínio desejado:
+
+```nginx
+server {
+    listen 80;
+    server_name vet.seudominio.com;
+    root /var/www/nataly-med-vet/dist;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ /\. {
+        deny all;
+    }
+}
+```
+
+3. Habilite esse site conforme a distribuição da VPS, execute `sudo nginx -t` e recarregue o Nginx. Configure DNS e HTTPS para o domínio antes de disponibilizar aos usuários.
+
+Para atualizar os arquivos depois de novos commits:
+
+```bash
+sudo git -C /var/www/nataly-med-vet pull --ff-only
+```
+
+Não é necessário `npm install` ou compilação. O comando `npm start` serve para prévia local e escuta somente em `127.0.0.1`. A configuração Nginx acima entrega acesso sem login; se o produto exigir acesso restrito, adicione autenticação na infraestrutura antes de disponibilizá-lo.
 
 ## Limites
 
-Não há autenticação própria, banco de pacientes, prontuário, cobrança ou sincronização de notas. A hospedagem Sites pode limitar acesso ao proprietário. Dados pessoais de estudo ficam no localStorage do navegador; limpar o armazenamento apaga esses dados. Não inserir dados identificáveis de pacientes. Fontes tipográficas externas têm fallback local.
+Não há autenticação própria, banco de pacientes, prontuário, cobrança ou sincronização de notas. Dados pessoais de estudo ficam no localStorage do navegador; limpar o armazenamento apaga esses dados. Não inserir dados identificáveis de pacientes. Fontes tipográficas externas têm fallback local.
 
 O conteúdo foi convertido e organizado, sem revisão clínica independente. Filtros não indicam segurança de uso. Espécies nas fichas clínicas são inferidas apenas quando explícitas no título; nos medicamentos, do campo da fonte. Consultar texto integral e original, especialmente doses e unidades. Existem inconsistências editoriais e duplicações no material, preservadas sem correções clínicas silenciosas.
 
@@ -32,4 +78,4 @@ Os PDFs originais estão em `sources/`, excluídos da publicação. O app inclui
 
 ## Manutenção
 
-`extract.py` reconstrói o acervo a partir dos caminhos originais fornecidos. Usa pypdfium2 e Pillow. `inventory.txt` relaciona cada ficha a suas páginas. `verify.py` verifica integridade do índice, páginas e recursos locais. Alterações nos documentos exigem revisão dos delimitadores de extração e validação visual.
+`extract.py` reconstrói o acervo a partir de `sources/clinica.pdf` e `sources/posologia.pdf`. Usa pypdfium2 e Pillow. A foto já acompanha o app; para recriá-la, forneça `sources/nataly.jpg`. `inventory.txt` relaciona cada ficha a suas páginas. `verify.py` verifica integridade do índice, páginas e recursos locais. Alterações nos documentos exigem revisão dos delimitadores de extração e validação visual.

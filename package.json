@@ -1,0 +1,13 @@
+{
+  "name": "nataly-med-vet",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Biblioteca veterinária de consulta e estudo — Dra. Nataly Michel",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs",
+    "check": "node --check dist/app.js && node check.mjs"
+  },
+  "engines": { "node": ">=18" }
+}
