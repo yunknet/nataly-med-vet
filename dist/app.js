@@ -38,10 +38,10 @@ const titles = {
   inicio: 'Visão geral',
   biblioteca: 'Biblioteca clínica',
   medicamentos: 'Guia de medicamentos',
-  fluxo: 'Consulta guiada',
-  estudos: 'Meu estudo',
+  fluxo: 'Roteiro de conduta',
+  estudos: 'Caderno clínico',
   favoritos: 'Favoritos',
-  sobre: 'Sobre a biblioteca'
+  sobre: 'Sobre o sistema'
 };
 
 function toast(s) {
@@ -62,11 +62,11 @@ function head(eyebrow, title, subtitle) {
   </div>`;
 }
 
-function searchBox(placeholder = 'Busque por condição clínica, medicamento ou princípio ativo…') {
+function searchBox(placeholder = 'Busque por diagnóstico, medicamento ou princípio ativo…') {
   return `<div class="searchbar">
     <div class="searchbox">
       <span class="search-icon">⌕</span>
-      <input id="search" type="search" aria-label="Pesquisar na biblioteca" placeholder="${placeholder}" value="${esc(query)}" autocomplete="off">
+      <input id="search" type="search" aria-label="Pesquisar na rotina clínica" placeholder="${placeholder}" value="${esc(query)}" autocomplete="off">
       ${query ? '<button type="button" class="search-clear" id="searchClear" aria-label="Limpar busca">✕</button>' : ''}
       <button type="button" class="btn search-btn" id="searchSubmit">Buscar</button>
     </div>
@@ -107,16 +107,16 @@ function card(r) {
   const isFav = favs.includes(r.id);
   const isDone = done.includes(r.id);
   return `<article class="record">
-    <button class="favorite" data-fav="${r.id}" aria-label="${isFav ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}" title="${isFav ? 'Remover dos favoritos' : 'Salvar nos favoritos'}">${isFav ? '♥' : '♡'}</button>
+    <button type="button" class="favorite" data-fav="${r.id}" aria-label="${isFav ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}" title="${isFav ? 'Remover dos favoritos' : 'Salvar nos favoritos'}">${isFav ? '♥' : '♡'}</button>
     <span class="tag">${esc(r.group)}</span>
     <h3>${esc(r.title)}</h3>
     <p>${esc(r.summary)}</p>
     <div class="meta">
-      <span>${esc(r.species || 'Pequenos animais')}</span>
+      <span>${esc(r.species || 'Cães e Gatos')}</span>
       ${r.route ? `<span> · ${esc(r.route)}</span>` : ''}
-      ${isDone ? '<span class="badge-done">✓ Estudado</span>' : ''}
+      ${isDone ? '<span class="badge-done">✓ Conduta revisada</span>' : ''}
     </div>
-    <button class="btn card-btn" data-open="${r.id}">Consultar conteúdo <span>↗</span></button>
+    <button type="button" class="btn card-btn" data-open="${r.id}">Consultar conduta <span>↗</span></button>
   </article>`;
 }
 
@@ -145,14 +145,14 @@ function home() {
   const meds = data.records.filter(r => r.doc === 'posologia');
   const gs = groups('clinica');
 
-  return head('BEM-VINDO À SUA BIBLIOTECA', 'Mais clareza para cuidar.', 'Seu acervo de referência organizado para a rotina veterinária.') +
+  return head('ROTINA DE ATENDIMENTO', 'Mais agilidade para a conduta clínica.', 'Seu guia rápido de diagnóstico, posologia e conduta terapêutica em pequenos animais.') +
   `<section class="hero">
     <div class="hero-copy">
-      <div class="eyebrow">CONHECIMENTO A SERVIÇO DO CUIDADO</div>
+      <div class="eyebrow">CONSULTA RÁPIDA · PLANTÃO E ATENDIMENTO</div>
       <h2>Uma boa conduta começa<br>com boas referências.</h2>
-      <p>Explore as fichas de clínica médica e medicamentos em um espaço prático, feito para acompanhar o seu atendimento e o seu estudo.</p>
+      <p>Acesse rapidamente protocolos clínicos hospitalares, prescrições domiciliares, exames recomendados e bulário com posologia em mg/kg.</p>
       <div class="hero-actions">
-        <a class="btn" href="#biblioteca">Explorar biblioteca clínica <span>↗</span></a>
+        <a class="btn" href="#biblioteca">Biblioteca clínica <span>↗</span></a>
         <a class="btn secondary" href="#medicamentos">Guia de medicamentos <span>↗</span></a>
       </div>
     </div>
@@ -162,19 +162,19 @@ function home() {
 
   <div class="stats">
     <div class="stat"><span class="stat-symbol">♡</span><div><strong>${clinical.length}</strong><small>Condições clínicas</small></div></div>
-    <div class="stat"><span class="stat-symbol">✚</span><div><strong>${meds.length}</strong><small>Entradas de medicamentos</small></div></div>
+    <div class="stat"><span class="stat-symbol">✚</span><div><strong>${meds.length}</strong><small>Medicamentos catalogados</small></div></div>
     <div class="stat"><span class="stat-symbol">⌘</span><div><strong>${gs.length}</strong><small>Especialidades</small></div></div>
-    <div class="stat"><span class="stat-symbol">▤</span><div><strong>${data.records.length}</strong><small>Fichas catalogadas</small></div></div>
+    <div class="stat"><span class="stat-symbol">▤</span><div><strong>${data.records.length}</strong><small>Fichas disponíveis</small></div></div>
   </div>
 
-  ${searchBox('Busque uma condição clínica, medicamento ou princípio ativo…')}
+  ${searchBox('Busque por diagnóstico, medicamento ou princípio ativo…')}
 
   <div class="homegrid">
     <section>
       <div class="sectionhead">
         <div>
-          <h2>Explore por especialidade</h2>
-          <p>Acesse rapidamente as fichas clínicas categorizadas.</p>
+          <h2>Especialidades de rotina</h2>
+          <p>Selecione uma especialidade para filtrar as condutas clínicas.</p>
         </div>
         <a class="textlink" href="#biblioteca">Ver todas ↗</a>
       </div>
@@ -183,7 +183,7 @@ function home() {
           <button type="button" class="specialty" data-group="${g}">
             <span class="glyph">${['♡', '◌', '≋', '◒', '✧', '♧'][i]}</span>
             <b>${g}</b>
-            <small>${clinical.filter(r => r.group === g).length} conteúdos <span>↗</span></small>
+            <small>${clinical.filter(r => r.group === g).length} condutas <span>↗</span></small>
           </button>
         `).join('')}
       </div>
@@ -191,26 +191,26 @@ function home() {
 
     <section>
       <div class="sectionhead">
-        <h2>Consulta guiada</h2>
+        <h2>Roteiro de conduta</h2>
       </div>
       <div class="guidebox">
-        <div class="eyebrow">ROTEIRO PASSO A PASSO</div>
-        <h3>Da dúvida à conduta.</h3>
-        <p class="muted">Um roteiro prático para organizar a pesquisa e conferir os pontos essenciais de cada caso.</p>
+        <div class="eyebrow">PASSO A PASSO NO ATENDIMENTO</div>
+        <h3>Da queixa à prescrição.</h3>
+        <p class="muted">Um roteiro rápido para sistematizar o atendimento, conferir hipóteses e validar doses com segurança no plantão.</p>
         <div class="stepsmini">
-          <div><i>1</i>Defina o assunto</div>
-          <div><i>2</i>Explore o conteúdo</div>
-          <div><i>3</i>Revise os pontos-chave</div>
-          <div><i>4</i>Registre anotações</div>
+          <div><i>1</i>Queixa & Hipóteses</div>
+          <div><i>2</i>Conduta & Exames</div>
+          <div><i>3</i>Prescrição & Doses</div>
+          <div><i>4</i>Orientações ao Tutor</div>
         </div>
-        <a class="btn secondary" href="#fluxo">Iniciar roteiro →</a>
+        <a class="btn secondary" href="#fluxo">Abrir roteiro →</a>
       </div>
     </section>
   </div>
 
   <div class="sectionhead">
-    <h2>${recent.length ? 'Continue de onde parou' : 'Destaques para consulta rápida'}</h2>
-    <a href="#estudos" class="textlink">Meu estudo ↗</a>
+    <h2>${recent.length ? 'Consultados recentemente' : 'Condutas frequentes na rotina'}</h2>
+    <a href="#estudos" class="textlink">Caderno clínico ↗</a>
   </div>
   <div class="records">
     ${(recent.length
@@ -220,7 +220,7 @@ function home() {
   </div>
 
   <div class="notice">
-    <strong>Aviso profissional:</strong> Conteúdo técnico de apoio ao estudo e à consulta clínica em pequenos animais. As recomendações, doses e frequências devem ser validadas conforme o julgamento do médico veterinário responsável pelo caso.
+    <strong>Aviso profissional:</strong> Conteúdo técnico de apoio à rotina e tomada de decisão clínica em pequenos animais. As recomendações, posologias e exames devem ser avaliados com base no quadro de cada paciente.
   </div>`;
 }
 
@@ -239,9 +239,9 @@ function library() {
   const isMed = view === 'medicamentos';
   const isFav = view === 'favoritos';
 
-  let subtitle = 'Explore condições, sinais clínicos e prescrições por especialidade.';
-  if (isMed) subtitle = 'Consulte medicamentos por princípio ativo, nome comercial, categoria ou via de uso.';
-  if (isFav) subtitle = 'Suas referências clínicas e farmacológicas salvas para consulta imediata.';
+  let subtitle = 'Condutas, exames diagnósticos, prescrições hospitalares e domiciliares.';
+  if (isMed) subtitle = 'Bulário posológico: princípio ativo, apresentações comerciais, doses em mg/kg e vias.';
+  if (isFav) subtitle = 'Seus protocolos e medicamentos salvos para acesso imediato no atendimento.';
 
   const groupOptions = isFav
     ? [...new Set(data.records.map(r => r.group))].sort((a, b) => a.localeCompare(b, 'pt-BR'))
@@ -249,24 +249,25 @@ function library() {
 
   const speciesOptions = [
     { value: 'cães', text: 'Cães (caninos)' },
-    { value: 'gatos', text: 'Gatos (felinos)' }
+    { value: 'gatos', text: 'Gatos (felinos)' },
+    { value: 'cães e gatos', text: 'Ambas (Cães e Gatos)' }
   ];
 
   const sectionOptions = [
     { value: 'PRESCRIÇÃO HOSPITALAR', text: 'Prescrição Hospitalar' },
     { value: 'PRESCRIÇÃO DOMICILIAR', text: 'Prescrição Domiciliar' },
     { value: 'Solicitações:', text: 'Solicitações de Exames' },
-    { value: 'Recomendações:', text: 'Recomendações e Orientações' }
+    { value: 'Recomendações:', text: 'Orientações e Recomendações' }
   ];
 
-  return head('CONSULTA ORGANIZADA', titles[view], subtitle) +
-  searchBox(isMed ? 'Pesquise por medicamento, princípio ativo ou indicação…' : 'Pesquise por diagnóstico, sinal clínico ou palavra-chave…') +
+  return head('CONSULTA DE ROTINA', titles[view], subtitle) +
+  searchBox(isMed ? 'Pesquise por nome comercial, princípio ativo ou indicação…' : 'Pesquise por diagnóstico, sintoma ou conduta clínica…') +
   `<div class="filters">
     ${select('group', 'Todas as ' + (isMed ? 'categorias' : 'especialidades'), groupOptions, group)}
     ${select('species', 'Todas as espécies', speciesOptions, species)}
     ${isMed
       ? select('route', 'Todas as vias', [...new Set(data.records.filter(r => r.doc === 'posologia').map(r => r.route))].filter(Boolean).sort(), route)
-      : select('section', 'Todos os tipos de prescrição', sectionOptions, section)
+      : select('section', 'Todos os tipos de conduta', sectionOptions, section)
     }
     <button type="button" class="btn secondary" id="clear">Limpar filtros</button>
   </div>
@@ -284,7 +285,15 @@ function filtered() {
     if (isFav && !favs.includes(r.id)) return false;
     if (!isFav && r.doc !== targetDoc) return false;
     if (group && r.group !== group) return false;
-    if (species && !r.species.toLowerCase().includes(species.toLowerCase())) return false;
+
+    if (species) {
+      if (species === 'cães e gatos') {
+        if (!r.species.toLowerCase().includes('cães e gatos')) return false;
+      } else {
+        if (!r.species.toLowerCase().includes(species.toLowerCase())) return false;
+      }
+    }
+
     if (route && r.route !== route) return false;
     if (section && !r.sections.includes(section)) return false;
 
@@ -349,14 +358,14 @@ function renderResults() {
   } else {
     const otherMatch = checkOtherSectionMatches();
     html += `<div class="empty">
-      <p>Nenhum conteúdo encontrado com os filtros e busca atuais.</p>
+      <p>Nenhum resultado encontrado com os filtros atuais.</p>
       ${otherMatch ? `
         <div class="other-match-box">
-          <p>Foram encontrados <strong>${otherMatch.count}</strong> resultados correspondentes em <strong>${otherMatch.name}</strong>.</p>
+          <p>Foram encontrados <strong>${otherMatch.count}</strong> registros correspondentes em <strong>${otherMatch.name}</strong>.</p>
           <button type="button" class="btn" id="goToOtherSearch">Buscar “${esc(query)}” no ${otherMatch.name} ↗</button>
         </div>
       ` : `
-        <p class="muted">Tente buscar por termos mais genéricos ou clique no botão abaixo para reiniciar os filtros.</p>
+        <p class="muted">Tente palavras mais genéricas ou redefina os filtros.</p>
         <button type="button" class="btn secondary" id="emptyReset">Limpar busca e filtros</button>
       `}
     </div>`;
@@ -423,16 +432,16 @@ function openRecord(id) {
         <span class="eyebrow">${esc(r.group)}</span>
         <h2>${esc(r.title)}</h2>
       </div>
-      <button type="button" class="icon" id="closeReader" aria-label="Fechar leitura">✕</button>
+      <button type="button" class="icon" id="closeReader" aria-label="Fechar conduta">✕</button>
     </div>
     <div class="readerbody">
       <div class="readertools">
         <button type="button" class="btn secondary" id="recordFav">${isFav ? '♥ Salvo nos favoritos' : '♡ Salvar favorito'}</button>
-        <button type="button" class="btn secondary" id="markDone">${isDone ? '✓ Marcado como estudado' : 'Marcar como estudado'}</button>
+        <button type="button" class="btn secondary" id="markDone">${isDone ? '✓ Marcado como revisado' : 'Marcar como revisado'}</button>
       </div>
 
       <div class="notice">
-        Material técnico organizado para consulta clínica e aprendizado contínuo. Avalie individualmente doses, contraindicações e histórico de cada paciente.
+        Guia prático para suporte à tomada de decisão clínica. Doses, vias e frequências devem ser ajustadas conforme o quadro individual de cada paciente.
       </div>
 
       <div class="readergrid">
@@ -442,17 +451,15 @@ function openRecord(id) {
 
         <aside class="readeraside">
           <div class="aside-block">
-            <div class="eyebrow">DETALHES</div>
+            <div class="eyebrow">DADOS CLÍNICOS</div>
             <div class="aside-detail-item">
               <span class="aside-label">Grupo / Especialidade:</span>
               <strong>${esc(r.group)}</strong>
             </div>
-            ${r.species ? `
-              <div class="aside-detail-item">
-                <span class="aside-label">Espécie indicada:</span>
-                <span>${esc(r.species)}</span>
-              </div>
-            ` : ''}
+            <div class="aside-detail-item">
+              <span class="aside-label">Espécie indicada:</span>
+              <span>${esc(r.species || 'Cães e Gatos')}</span>
+            </div>
             ${r.route ? `
               <div class="aside-detail-item">
                 <span class="aside-label">Via de administração:</span>
@@ -468,10 +475,10 @@ function openRecord(id) {
           </div>
 
           <div class="aside-block" style="margin-top: 24px;">
-            <div class="eyebrow">MEU CADERNO</div>
-            <label for="note">Anotações de estudo deste caso</label>
-            <textarea id="note" placeholder="Escreva observações clínicas, dúvidas ou pontos para revisar...">${esc(notes[id] || '')}</textarea>
-            <small class="muted">Salvo automaticamente no seu navegador.</small>
+            <div class="eyebrow">CADERNO CLÍNICO</div>
+            <label for="note">Anotações e condutas deste paciente/caso:</label>
+            <textarea id="note" placeholder="Registre doses personalizadas, associações ou observações clínicas do atendimento...">${esc(notes[id] || '')}</textarea>
+            <small class="muted">Salvo automaticamente no seu dispositivo.</small>
           </div>
         </aside>
       </div>
@@ -487,7 +494,7 @@ function openRecord(id) {
   $('#markDone').onclick = () => {
     done = done.includes(id) ? done.filter(x => x !== id) : [...done, id];
     write('done', done);
-    $('#markDone').textContent = done.includes(id) ? '✓ Marcado como estudado' : 'Marcar como estudado';
+    $('#markDone').textContent = done.includes(id) ? '✓ Marcado como revisado' : 'Marcar como revisado';
   };
   $('#note').oninput = e => {
     notes[id] = e.target.value;
@@ -500,16 +507,16 @@ function openRecord(id) {
   }
 }
 
-const flowLabels = ['Definir', 'Explorar', 'Revisar', 'Registrar'];
+const flowLabels = ['Queixa & Hipóteses', 'Conduta & Exames', 'Prescrição & Doses', 'Orientações & Alta'];
 const checks = [
-  ['Identifiquei a espécie e a queixa principal do paciente.', 'Separei as hipóteses diagnósticas e os pontos a esclarecer.'],
-  ['Consultei o quadro clínico e os diagnósticos diferenciais.', 'Verifiquei as alternativas terapêuticas e os cenários clínicos.'],
-  ['Validei as doses, vias e frequências recomendadas.', 'Verifiquei possíveis contraindicações e interações medicamentosas.'],
-  ['Salvei as referências úteis nos meus favoritos.', 'Adicionei observações importantes no meu caderno de estudo.']
+  ['Identifiquei a espécie, idade e queixa principal do paciente.', 'Delimitei as hipóteses diagnósticas e diagnósticos diferenciais.'],
+  ['Avaliei as orientações de exames complementares recomendados.', 'Consultei o protocolo hospitalar e as medidas imediatas.'],
+  ['Conferi dose em mg/kg, via e frequência de administração.', 'Verifiquei contraindicações e interações medicamentosas.'],
+  ['Defini a prescrição domiciliar e orientações ao tutor.', 'Registrei as observações clínicas no caderno de plantão.']
 ];
 
 function flowView() {
-  return head('CONSULTA GUIADA', 'Roteiro de conduta clínica.', 'Organize sua pesquisa, confira os pontos críticos e tome decisões com segurança.') +
+  return head('ROTEIRO DE CONDUTA', 'Sistematização do atendimento clínico.', 'Um roteiro objetivo para conduzir o caso clínico com segurança, da queixa inicial à prescrição de alta.') +
   `<div class="flowlayout">
     <div class="flowsteps">
       ${flowLabels.map((t, i) => `
@@ -521,43 +528,48 @@ function flowView() {
 
     <div class="flowpanel">
       <div class="eyebrow">ETAPA ${flow + 1} DE 4</div>
-      <h2>${['Qual é a dúvida ou queixa principal?', 'Acesse as referências clínicas adequadas.', 'Valide doses e contraindicações.', 'Registre no caderno e acompanhe a evolução.'][flow]}</h2>
+      <h2>${[
+        'Qual é a queixa principal ou hipótese?',
+        'Consulte a conduta clínica e exames necessários.',
+        'Valide posologia, vias e apresentações comerciais.',
+        'Prescrição domiciliar e orientações ao tutor.'
+      ][flow]}</h2>
       <p>${[
-        'Escolha uma especialidade para filtrar e organizar os tópicos do caso.',
-        'Explore as fichas diagnósticas e terapêuticas relacionadas à condição.',
-        'Confira posologias com base nas particularidades do paciente e julgamento clínico.',
-        'Use anotações e favoritos para manter um registro ágil de aprendizado.'
+        'Selecione uma especialidade para filtrar e agilizar o acesso às fichas relacionadas ao caso.',
+        'Verifique exames complementares solicitados e condutas hospitalares imediatas na ficha da doença.',
+        'Confira as opções terapêuticas no Guia de Medicamentos com doses exatas em mg/kg para a espécie.',
+        'Finalize as recomendações domiciliares ao tutor e registre observações no seu Caderno Clínico.'
       ][flow]}</p>
 
       ${flow === 0 ? `
         <div class="field">
-          <label for="flowgroup">Selecione a especialidade de interesse:</label>
+          <label for="flowgroup">Selecione a especialidade do caso:</label>
           ${select('flowgroup', 'Escolha uma especialidade', groups('clinica'), read('flowgroup', ''))}
         </div>
       ` : ''}
 
       ${flow === 1 ? `
         <div class="flow-actions">
-          <a class="btn" href="#biblioteca">Explorar biblioteca clínica ↗</a>
+          <a class="btn" href="#biblioteca">Acessar biblioteca clínica ↗</a>
           <a class="btn secondary" href="#medicamentos">Consultar medicamentos ↗</a>
         </div>
       ` : ''}
 
       ${flow === 2 ? `
         <div class="flow-actions">
-          <a class="btn" href="#medicamentos">Revisar doses e vias ↗</a>
-          <a class="btn secondary" href="#biblioteca">Revisar condutas ↗</a>
+          <a class="btn" href="#medicamentos">Checar doses e vias ↗</a>
+          <a class="btn secondary" href="#biblioteca">Checar conduta clínica ↗</a>
         </div>
       ` : ''}
 
       ${flow === 3 ? `
         <div class="flow-actions">
-          <a class="btn" href="#estudos">Abrir meu caderno de estudo ↗</a>
+          <a class="btn" href="#estudos">Abrir caderno clínico ↗</a>
         </div>
       ` : ''}
 
       <div class="checklist">
-        <div class="eyebrow" style="margin-bottom: 12px;">PONTOS DE CONFERÊNCIA</div>
+        <div class="eyebrow" style="margin-bottom: 12px;">PONTOS DE CONFERÊNCIA CLÍNICA</div>
         ${checks[flow].map((t, i) => `
           <label class="check-item">
             <input type="checkbox" data-check="${flow}-${i}" ${flowChecks[flow + '-' + i] ? 'checked' : ''}>
@@ -578,11 +590,11 @@ function study() {
   const pct = Math.round((done.length / data.records.length) * 100);
   const activeNotes = Object.entries(notes).filter(([, v]) => v && v.trim());
 
-  return head('SEU ESPAÇO DE APRENDIZADO', 'Meu Estudo.', 'Acompanhe seu progresso de leitura e retome suas anotações clínicas.') +
+  return head('CENTRAL DE CONSULTA', 'Caderno Clínico.', 'Acompanhe seus protocolos consultados, retome suas anotações de casos e acesse o histórico rápido.') +
   `<div class="stats">
-    <div class="stat"><span class="stat-symbol">✓</span><div><strong>${done.length}</strong><small>Conteúdos estudados</small></div></div>
-    <div class="stat"><span class="stat-symbol">♡</span><div><strong>${favs.length}</strong><small>Favoritos salvos</small></div></div>
-    <div class="stat"><span class="stat-symbol">✎</span><div><strong>${activeNotes.length}</strong><small>Anotações registradas</small></div></div>
+    <div class="stat"><span class="stat-symbol">✓</span><div><strong>${done.length}</strong><small>Condutas revisadas</small></div></div>
+    <div class="stat"><span class="stat-symbol">♡</span><div><strong>${favs.length}</strong><small>Favoritos de rotina</small></div></div>
+    <div class="stat"><span class="stat-symbol">✎</span><div><strong>${activeNotes.length}</strong><small>Anotações clínicas</small></div></div>
     <div class="stat"><span class="stat-symbol">📈</span><div><strong>${pct}%</strong><small>Do acervo consultado</small></div></div>
   </div>
 
@@ -592,10 +604,10 @@ function study() {
 
   <div class="sectionhead">
     <div>
-      <h2>Meu caderno de anotações</h2>
-      <p>Registros salvos durante suas leituras.</p>
+      <h2>Anotações de casos e condutas</h2>
+      <p>Registros e observações salvas durante seus atendimentos.</p>
     </div>
-    ${activeNotes.length ? '<button type="button" class="btn secondary" id="export">Exportar anotações ↓</button>' : ''}
+    ${activeNotes.length ? '<button type="button" class="btn secondary" id="export">Exportar anotações (.txt) ↓</button>' : ''}
   </div>
 
   ${activeNotes.length ? `
@@ -605,7 +617,7 @@ function study() {
         return `
           <div class="studyitem" data-open="${id}">
             <div>
-              <span class="tag">${esc(r?.group || 'Geral')}</span>
+              <span class="tag">${esc(r?.group || 'Clínica Geral')}</span>
               <b>${esc(r?.title || id)}</b>
               <p class="studyitem-text">${esc(text.slice(0, 140))}${text.length > 140 ? '…' : ''}</p>
             </div>
@@ -616,40 +628,37 @@ function study() {
     </div>
   ` : `
     <div class="empty">
-      <p>Seu caderno ainda não possui anotações.</p>
-      <p class="muted">Ao consultar qualquer ficha ou medicamento, use a aba "Meu Caderno" para salvar anotações.</p>
+      <p>Nenhuma anotação registrada ainda.</p>
+      <p class="muted">Ao consultar uma ficha clínica ou medicamento, você pode registrar anotações e dosagens específicas do paciente.</p>
     </div>
   `}
 
   <div class="sectionhead" style="margin-top: 35px;">
-    <h2>Consultados recentemente</h2>
+    <h2>Consultados recentemente no plantão</h2>
   </div>
   <div class="records">
     ${recent.length
       ? recent.map(id => data.records.find(r => r.id === id)).filter(Boolean).slice(0, 6).map(card).join('')
-      : '<p class="muted">Os últimos conteúdos abertos aparecerão aqui.</p>'
+      : '<p class="muted">Os últimos protocolos abertos aparecerão aqui para retorno rápido.</p>'
     }
   </div>`;
 }
 
 function about() {
-  return head('TRANSPARÊNCIA', 'Sobre a biblioteca.', 'Conhecimento técnico veterinário organizado para consulta e estudo.') +
+  return head('TRANSPARÊNCIA', 'Sobre o sistema.', 'Guia técnico de referência médica veterinária para consulta e tomada de decisão.') +
   `<div class="about">
     <h2>Apresentação</h2>
-    <p>A Biblioteca Veterinária da Dra. Nataly Michel foi criada para atender às necessidades diárias de consulta rápida e estudo aprofundado na clínica médica de pequenos animais e posologia farmacológica.</p>
+    <p>O sistema foi desenvolvido como uma ferramenta prática e ágil de suporte à rotina clínica e de plantão médico veterinário em pequenos animais (cães e gatos).</p>
 
     <h2>Estrutura do Acervo</h2>
-    <p>O acervo conta com <strong>781 fichas</strong> estruturadas, divididas entre:</p>
+    <p>O sistema reúne <strong>781 fichas técnicas</strong> divididas em:</p>
     <ul>
-      <li><strong>Biblioteca Clínica:</strong> Diagnósticos, sinais clínicos, orientações de exames, prescrições hospitalares e domiciliares organizadas por 17 especialidades médicas.</li>
-      <li><strong>Guia de Medicamentos:</strong> Consulta de princípios ativos, apresentações comerciais, posologias para cães e gatos, vias e recomendações farmacológicas.</li>
+      <li><strong>Biblioteca Clínica:</strong> Diagnósticos, sinais clínicos, orientações de exames, prescrições hospitalares e prescrições domiciliares distribuídas em 17 especialidades.</li>
+      <li><strong>Guia de Medicamentos:</strong> Consulta de princípios ativos, apresentações comerciais, doses em mg/kg para cães e gatos, vias e recomendações farmacológicas.</li>
     </ul>
 
-    <h2>Privacidade e Armazenamento Local</h2>
-    <p>Suas anotações, histórico de leitura, favoritos e tema escolhido são mantidos com total privacidade diretamente no armazenamento local (localStorage) do seu navegador. Nenhuma informação de navegação ou dados clínicos de pacientes são enviados para servidores externos.</p>
-
-    <h2>Uso Profissional e Clínico</h2>
-    <p>Esta ferramenta é destinada exclusivamente a médicos veterinários e estudantes da área. As informações devem ser aplicadas em consonância com a avaliação clínica individual, exames complementares e responsabilidade técnica profissional.</p>
+    <h2>Privacidade</h2>
+    <p>Suas anotações, histórico de consulta e favoritos ficam armazenados com total privacidade diretamente no navegador do seu dispositivo. Nenhuma informação sobre pacientes ou prontuários é enviada para a internet.</p>
 
     <div style="margin-top: 25px;">
       <a class="btn" href="#biblioteca">Acessar biblioteca clínica ↗</a>
@@ -806,7 +815,7 @@ function render() {
         flow++;
         render();
       } else {
-        toast('Roteiro concluído! Acesse "Meu Estudo" para acompanhar suas anotações.');
+        toast('Roteiro concluído! Acesse "Caderno Clínico" para conferir suas anotações.');
         go('estudos');
       }
     });
@@ -817,13 +826,13 @@ function render() {
       const activeNotes = Object.entries(notes).filter(([, v]) => v && v.trim());
       const content = activeNotes.map(([id, v]) => {
         const r = data.records.find(item => item.id === id);
-        return `========================================\n${r?.title || id}\nGrupo: ${r?.group || 'Geral'}\n----------------------------------------\n${v}\n`;
+        return `========================================\n${r?.title || id}\nGrupo: ${r?.group || 'Clínica Geral'}\nEspécie: ${r?.species || 'Cães e Gatos'}\n----------------------------------------\n${v}\n`;
       }).join('\n\n');
 
       const blob = new Blob([content || 'Nenhuma anotação registrada.'], { type: 'text/plain;charset=utf-8' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = 'anotacoes-estudo-dra-nataly-michel.txt';
+      a.download = 'anotacoes-clinicas-dra-nataly-michel.txt';
       a.click();
       setTimeout(() => URL.revokeObjectURL(a.href), 1000);
     });
@@ -898,7 +907,7 @@ fetch('data.json')
     if (main) {
       main.innerHTML = `
         <div class="empty">
-          <h2>Não foi possível carregar a biblioteca.</h2>
+          <h2>Não foi possível carregar o acervo clínico.</h2>
           <p>Verifique sua conexão ou recarregue a página.</p>
           <button type="button" class="btn" onclick="location.reload()">Recarregar página</button>
         </div>
